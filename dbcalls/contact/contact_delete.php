@@ -1,8 +1,7 @@
 <?php
 /**
  * Contact - DELETE Operation
- * Place in: /dbcalls/contact/delete.php
- * Removes contact records
+ 
  */
 
 include('../conn.php');

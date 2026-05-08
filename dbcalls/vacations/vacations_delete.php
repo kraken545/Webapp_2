@@ -1,7 +1,7 @@
 <?php
 /**
  * Vacations - DELETE Operation
- * Place in: /dbcalls/vacations/delete.php
+
  */
 
 include('../conn.php');

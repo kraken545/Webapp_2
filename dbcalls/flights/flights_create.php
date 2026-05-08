@@ -1,7 +1,7 @@
 <?php
 /**
  * Flights - CREATE Operation
- * Place in: /dbcalls/flights/create.php
+
  */
 
 include('../conn.php');

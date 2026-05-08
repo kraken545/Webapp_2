@@ -1,7 +1,7 @@
 <?php
 /**
  * Accommodation - UPDATE Operation
- * Place in: /dbcalls/accommodation/update.php
+
  */
 
 include('../conn.php');

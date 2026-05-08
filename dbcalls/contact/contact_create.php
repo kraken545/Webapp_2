@@ -1,8 +1,7 @@
 <?php
 /**
  * Contact - CREATE Operation
- * Place in: /dbcalls/contact/create.php
- * Handles contact form submission
+
  */
 
 include('../conn.php');

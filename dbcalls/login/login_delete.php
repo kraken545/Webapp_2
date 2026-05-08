@@ -1,7 +1,7 @@
 <?php
 /**
  * Delete an admin user
- * Place in: /dbcalls/login/delete.php
+ 
  */
 include('../conn.php');
 

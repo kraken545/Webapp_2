@@ -1,8 +1,7 @@
 <?php
 /**
  * Contact - UPDATE Operation
- * Place in: /dbcalls/contact/update.php
- * Updates contact information
+
  */
 
 include('../conn.php');

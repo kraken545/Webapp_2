@@ -2,7 +2,7 @@
 <?php
 /**
  * Create a new admin user
- * Place in: /dbcalls/login/create.php
+ 
  */
 include('../conn.php');
 

@@ -1,7 +1,6 @@
 <?php
 /**
  * Accommodation - CREATE Operation
- * Place in: /dbcalls/accommodation/create.php
  */
 
 include('../conn.php');

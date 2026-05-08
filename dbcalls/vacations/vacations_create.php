@@ -1,7 +1,7 @@
 <?php
 /**
  * Vacations - CREATE Operation
- * Place in: /dbcalls/vacations/create.php
+
  */
 
 include('../conn.php');

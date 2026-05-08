@@ -1,7 +1,7 @@
 <?php
 /**
  * Admin Users - READ Operation
- * Place in: /dbcalls/admin/read.php
+
  */
 
 include('../conn.php');

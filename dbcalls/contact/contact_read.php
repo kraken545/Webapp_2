@@ -1,8 +1,7 @@
 <?php
 /**
  * Contact - READ Operation
- * Place in: /dbcalls/contact/read.php
- * Retrieves contact messages
+
  */
 
 include('../conn.php');

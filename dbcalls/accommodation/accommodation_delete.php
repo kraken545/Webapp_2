@@ -1,7 +1,7 @@
 <?php
 /**
  * Accommodation - DELETE Operation
- * Place in: /dbcalls/accommodation/delete.php
+
  */
 
 include('../conn.php');

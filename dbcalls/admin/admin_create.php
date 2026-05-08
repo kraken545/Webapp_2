@@ -1,7 +1,7 @@
 <?php
 /**
  * Admin Users - CREATE Operation
- * Place in: /dbcalls/admin/create.php
+
  */
 
 include('../conn.php');

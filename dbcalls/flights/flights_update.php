@@ -1,7 +1,7 @@
 <?php
 /**
  * Flights - UPDATE Operation
- * Place in: /dbcalls/flights/update.php
+
  */
 
 include('../conn.php');

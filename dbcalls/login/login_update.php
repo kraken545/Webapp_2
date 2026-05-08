@@ -2,7 +2,6 @@
 <?php
 /**
  * Update an admin user
- * Place in: /dbcalls/login/update.php
  */
 include('../conn.php');
 

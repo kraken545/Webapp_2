@@ -1,7 +1,7 @@
 <?php
 /**
  * Flights - READ Operation
- * Place in: /dbcalls/flights/read.php
+
  */
 
 include('../conn.php');

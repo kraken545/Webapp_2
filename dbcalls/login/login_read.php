@@ -2,7 +2,7 @@
 <?php
 /**
  * Read admin user information
- * Place in: /dbcalls/login/read.php
+ * 
  */
 include('../conn.php');
 

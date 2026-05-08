@@ -1,7 +1,7 @@
 <?php
 /**
  * Accommodation - READ Operation
- * Place in: /dbcalls/accommodation/read.php
+
  */
 
 include('../conn.php');
