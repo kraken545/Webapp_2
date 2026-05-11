@@ -1,4 +1,4 @@
-// login_update.php
+
 <?php
 /**
  * Update an admin user
