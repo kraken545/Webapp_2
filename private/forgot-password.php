@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Voyage - Login</title>
+    <title>Voyage - Reset Password</title>
 </head>
 <body class="font">
     <header>
@@ -26,8 +26,8 @@
 
     <main>
         <section class="page-section">
-            <h1 class="page-title">Login</h1>
-            <p class="page-subtitle">Access your Voyage account</p>
+            <h1 class="page-title">Reset Password</h1>
+            <p class="page-subtitle">Enter your email address and we'll send you a link to reset your password</p>
         </section>
 
         <div class="form-container">
@@ -37,24 +37,22 @@
                     <input type="email" id="email" name="email" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-
-                <div class="form-group form-group-horizontal">
-                    <input type="checkbox" id="remember" name="remember" class="checkbox-input">
-                    <label for="remember" class="checkbox-label">Remember me</label>
-                </div>
-
-                <button type="submit" class="form-button">Sign In</button>
+                <button type="submit" class="form-button">Send Reset Link</button>
             </form>
 
             <div class="form-links-container">
-                <p>Don't have an account? <a href="./signup.php" class="form-link-primary">Create one</a></p>
-                <p><a href="./forgot-password.php" class="form-link-secondary">Forgot your password?</a></p>
+                <p>Remember your password? <a href="./login.php" class="form-link-primary">Sign in</a></p>
             </div>
         </div>
+
+        <section class="text-content text-content-centered">
+            <h3>How it works:</h3>
+            <p><strong>1. Enter your email:</strong> Provide the email address associated with your Voyage account.</p>
+            <p><strong>2. Check your inbox:</strong> We'll send you an email with a password reset link within a few minutes.</p>
+            <p><strong>3. Reset your password:</strong> Click the link in the email and follow the instructions to create a new password.</p>
+            <p><strong>4. Sign in:</strong> Use your new password to log back into your account.</p>
+            <p class="helper-text">If you don't receive an email, please check your spam folder or contact our support team at info@voyage.nl</p>
+        </section>
     </main>
 
     <footer>

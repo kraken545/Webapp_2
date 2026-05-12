@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Voyage - Login</title>
+    <title>Voyage - Create Account</title>
 </head>
 <body class="font">
     <header>
@@ -26,15 +26,30 @@
 
     <main>
         <section class="page-section">
-            <h1 class="page-title">Login</h1>
-            <p class="page-subtitle">Access your Voyage account</p>
+            <h1 class="page-title">Create Account</h1>
+            <p class="page-subtitle">Join Voyage and start booking your perfect trips</p>
         </section>
 
         <div class="form-container">
             <form method="POST" action="">
                 <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
+
+                <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
                 </div>
 
                 <div class="form-group">
@@ -42,17 +57,21 @@
                     <input type="password" id="password" name="password" required>
                 </div>
 
-                <div class="form-group form-group-horizontal">
-                    <input type="checkbox" id="remember" name="remember" class="checkbox-input">
-                    <label for="remember" class="checkbox-label">Remember me</label>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
                 </div>
 
-                <button type="submit" class="form-button">Sign In</button>
+                <div class="form-group form-group-horizontal-flex-start">
+                    <input type="checkbox" id="agree" name="agree" class="checkbox-input-with-margin" required>
+                    <label for="agree" class="checkbox-label">I agree to the <a href="../public/privacy.php" class="form-link-inline">Privacy Policy</a> and <a href="../public/contact.php" class="form-link-inline">Terms of Service</a></label>
+                </div>
+
+                <button type="submit" class="form-button">Create Account</button>
             </form>
 
             <div class="form-links-container">
-                <p>Don't have an account? <a href="./signup.php" class="form-link-primary">Create one</a></p>
-                <p><a href="./forgot-password.php" class="form-link-secondary">Forgot your password?</a></p>
+                <p>Already have an account? <a href="./login.php" class="form-link-primary">Sign in</a></p>
             </div>
         </div>
     </main>
