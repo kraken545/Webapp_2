@@ -25,14 +25,35 @@
     </header>
 
     <main>
-        <!-- Accommodations content goes here -->
-    </main>
-
-    <footer>
+       <section>
+        <div class="offer-section">
+            <div>
+               <img src="../assets/img/test_img/1246280_16061017110043391702.png" alt="" width="100" height="100"> 
+            </div>
+            <div class="offer-beschrijving">
+                <div>hotel mitsis</div>
+                <div><span class="hotel-stars">★★★★★</span></div>
+                <div>tsvilli - zakynthos - Griekenland</div>
+                <div>dobberen in prachtige zwembaden</div>
+                <div>glijbanen voor kinderplezier</div>
+                <div>fit worden in onze gym</div>
+            </div>
+            <div class="offer-prijs">
+                <div>pp. vanaf*</div>
+                <div>€ 529,-</div>
+                <div>ma 19 okt</div>
+                <div>vanaf amsterdam</div>
+                <div>all inclusive</div>
+                <button>Bekijk Vakantie</button>
+            </div>
+        </div>
+       </section>
+       </main>
+ <footer>
         <div class="footer-bar">
             <nav>
-                <a href="./contact.php">Contact</a>
-                <a href="./privacy.php">Privacy Policy</a>
+                <a href="./public/contact.php">Contact</a>
+                <a href="./public/privacy.php">Privacy Policy</a>
             </nav>
             <div class="footer-socials">
                 <img src="../assets/img/icon_dark/facebook (1).png" alt="Facebook" width="24" height="25">

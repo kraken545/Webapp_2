@@ -256,8 +256,9 @@ main {
     border-radius: 25px;
     background: #ddfff7;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
     padding: 20px;
     text-transform: uppercase;
     letter-spacing: 0.07em;
@@ -265,7 +266,11 @@ main {
     box-shadow: #969595 0px 4px 12px -2px;
 }
 
-
+.promo-card img {
+    width: 225px;
+    height: 120px;
+    border-radius: 15px;
+}
 
 .footer-socials {
     display: flex;
@@ -655,6 +660,59 @@ main {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* ============= affer pagina ================ */
+
+
+.offer-section {
+    width: 650px;
+    height: 230px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    border: #888888 1px solid;
+
+
+}
+
+.offer-section img {
+    width: 200px;
+    height: 200px;
+    justify-self: center;
+    display: flex;
+    padding: 10px;
+
+}
+
+.offer-beschrijving {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: #888888 1px solid;
+    padding: 10px;
+}
+
+.offer-prijs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: #888888 1px solid;
+    padding: 10px;
+}
+
+.offer-prijs button {
+    background-color: #f1a208;
+    display: flex;
+    color: #ffffff;
+    border: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+
 }
 
 /* @media (max-width: 900px) {

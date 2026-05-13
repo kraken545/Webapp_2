@@ -34,14 +34,14 @@
             <div class="search-label">
                 <div><img src="assets/img/searchBar_icon/locatie.png" alt="" width="15"> From</div>
                 <div><img src="assets/img/searchBar_icon/locatie.png" alt="" width="15"> To</div>
-                <div><img src="assets/img/searchBar_icon/calendar.png" alt="" width="18"> departure</div>
-                <div><img src="assets/img/searchBar_icon/calendar.png" alt="" width="18"> return</div>
+                <div><img src="assets/img/searchBar_icon/calendar.png" alt="" width="18"> Departure</div>
+                <div><img src="assets/img/searchBar_icon/calendar.png" alt="" width="18"> Return</div>
                 <div><img src="assets/img/searchBar_icon/people.png" alt="" width="20"> Reizegers</div>
             </div>
             <form action="" method="get" >
            
             <select class="search-field" name="from" id="" placeholder="Destination"> 
-                <option value="text"><strong></strong>Destination</strong></option>
+                <option value="0"><strong>Destination</strong></option>
                 <option value="1">Amsterdam</option>
                 <option value="2">India</option>
                 <option value="3">Aruba</option>
@@ -49,7 +49,7 @@
                 <option value="5">China</option>
             </select>
             <select class="search-field" value="Destination" name="to" id="Choose destination">
-                <option value="0"><strong></strong>Destination</strong></option>
+                <option value="0"><strong>Destination</strong></option>
                 <option value="1"><strong>Aruba</strong></option>
                 <option value="2"><strong>Tokyo</strong></option>
                 <option value="3"><strong>Changai</strong></option>
@@ -62,7 +62,7 @@
             <input type="date" class="search-field"  min="2026-06-01" max="2035-12-31" name="return-date" id="return-date">
             
 
-           <select class="search-field" name="to" id="Choose destination">
+           <select class="search-field" name="" id="">
                 <option value="Argentina"></option>
                 <option value="Aruba"></option>
                 <option value="Tokyo"></option>
@@ -90,9 +90,9 @@
         </section>
 
         <section class="promo-row">
-            <div class="promo-card">popular destinations</div>
-            <div class="promo-card">current offers</div>
-            <div class="promo-card">popular destinations</div>
+            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="" ></div>
+            <div class="promo-card">current offers <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="" ></div>
+            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="" ></div>
         </section>
     </main>
 
