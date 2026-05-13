@@ -18,7 +18,7 @@
                 <a href="./public/contact.php">Contact</a>
             </nav>
             <div class="nav-icon">
-                <img src="./assets/img/icon_color/loop.png" alt="search" width="24" height="24">
+                <!-- <a href="./public/accommodation.php"><img src="assets/img/icon_color/heart.png" alt="Wishlist" width="20" height="20"></a> -->
             </div>
             <div class="nav-account"><a href="./private/login.php" class="nav-account-link">My Account</a></div>
         </div>
@@ -32,16 +32,16 @@
 
         <section class="search-panel">
             <div class="search-label">
-                <div><img src="assets/img/searchBar_icon/locatie.png" alt="" width="15"> From</div>
-                <div><img src="assets/img/searchBar_icon/locatie.png" alt="" width="15"> To</div>
-                <div><img src="assets/img/searchBar_icon/calendar.png" alt="" width="18"> Departure</div>
-                <div><img src="assets/img/searchBar_icon/calendar.png" alt="" width="18"> Return</div>
-                <div><img src="assets/img/searchBar_icon/people.png" alt="" width="20"> Reizegers</div>
+                <div><img src="assets/img/searchBar_icon/icons_darkGreen/location_green.png" alt="" width="15"> From</div>
+                <div><img src="assets/img/searchBar_icon/icons_darkGreen/location_green.png" alt="" width="15"> To</div>
+                <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Departure</div>
+                <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Return</div>
+                <div><img src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="20"> Travelers</div>
             </div>
             <form action="" method="get" >
            
             <select class="search-field" name="from" id="" placeholder="Destination"> 
-                <option value="0"><strong>Destination</strong></option>
+                <option value="0"><div class="choose-balk"><strong>Destination</strong></div></option>
                 <option value="1">Amsterdam</option>
                 <option value="2">India</option>
                 <option value="3">Aruba</option>
@@ -72,7 +72,7 @@
             </select>
            
             
-            <button class="search-button"><img src="assets/img/icon_color/loop.png" alt="Search" width="20" height="20"> Search</button>
+            <button class="search-button"><img src="assets/img/searchBar_icon/icons_darkGreen/loop.png" alt="Search" width="20" height="20"> Search</button>
             </form>
             
         </section>
@@ -103,9 +103,9 @@
                 <a href="./public/privacy.php">Privacy Policy</a>
             </nav>
             <div class="footer-socials">
-                <img src="assets/img/icon_dark/facebook (1).png" alt="Facebook" width="24" height="25">
-                <img src="assets/img/icon_dark/instagram.png" alt="Instagram" width="24" height="24">
-                <img src="assets/img/icon_dark/twitter.png" alt="Twitter" width="24" height="23">
+                <a href="https://www.facebook.com/" target="_blank"><img src="assets/img/icon_dark/facebook (1).png" alt="Facebook" width="24" height="25"></a>
+                <a href="http://instagram.com/" target="_blank"><img src="assets/img/icon_dark/instagram.png" alt="Instagram" width="24" height="24"></a>
+                <a href="http://x.com/" target="_blank"><img src="assets/img/icon_dark/twitter.png" alt="Twitter" width="24" height="23"></a>
             </div>
         </div>
     </footer>

@@ -1,6 +1,6 @@
 
 
-# Database Setup
+# Database Setup  
 
 - create database using sql query -->> Trello /dbQuerys/dbstructuur.sql
 
