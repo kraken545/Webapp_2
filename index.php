@@ -17,9 +17,7 @@
                 <a href="./public/about.php">About Us</a>
                 <a href="./public/contact.php">Contact</a>
             </nav>
-            <div class="nav-icon">
-                <!-- <a href="./public/accommodation.php"><img src="assets/img/icon_color/heart.png" alt="Wishlist" width="20" height="20"></a> -->
-            </div>
+          
             <div class="nav-account"><a href="./private/login.php" class="nav-account-link">My Account</a></div>
         </div>
     </header>
@@ -103,9 +101,9 @@
                 <a href="./public/privacy.php">Privacy Policy</a>
             </nav>
             <div class="footer-socials">
-                <a href="https://www.facebook.com/" target="_blank"><img src="assets/img/icon_dark/facebook (1).png" alt="Facebook" width="24" height="25"></a>
-                <a href="http://instagram.com/" target="_blank"><img src="assets/img/icon_dark/instagram.png" alt="Instagram" width="24" height="24"></a>
-                <a href="http://x.com/" target="_blank"><img src="assets/img/icon_dark/twitter.png" alt="Twitter" width="24" height="23"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="assets/img/social_icon_dark/facebook (1).png" alt="Facebook" width="24" height="25"></a>
+                <a href="http://instagram.com/" target="_blank"><img src="assets/img/social_icon_dark/instagram.png" alt="Instagram" width="24" height="24"></a>
+                <a href="http://x.com/" target="_blank"><img src="assets/img/social_icon_dark/twitter.png" alt="Twitter" width="24" height="23"></a>
             </div>
         </div>
     </footer>

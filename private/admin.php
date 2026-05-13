@@ -17,9 +17,7 @@
                 <a href="../public/about.php">About Us</a>
                 <a href="../public/contact.php">Contact</a>
             </nav>
-            <div class="nav-icon">
-                <img src="../assets/img/icon_color/loop.png" alt="search" width="24" height="24">
-            </div>
+          
             <div class="nav-account"><a href="./login.php" class="nav-account-link">My Account</a></div>
         </div>
     </header>
@@ -139,9 +137,9 @@
                 <a href="../public/privacy.php">Privacy Policy</a>
             </nav>
             <div class="footer-socials">
-                <img src="../assets/img/icon_dark/facebook (1).png" alt="Facebook" width="24" height="25">
-                <img src="../assets/img/icon_dark/instagram.png" alt="Instagram" width="24" height="24">
-                <img src="../assets/img/icon_dark/twitter.png" alt="Twitter" width="24" height="23">
+                <img src="../assets/img/social_icon_dark/facebook (1).png" alt="Facebook" width="24" height="25">
+                <img src="../assets/img/social_icon_dark/instagram.png" alt="Instagram" width="24" height="24">
+                <img src="../assets/img/social_icon_dark/twitter.png" alt="Twitter" width="24" height="23">
             </div>
         </div>
     </footer>

@@ -28,16 +28,16 @@
         <!-- Flights content goes here -->
     </main>
 
-    <footer>
+     <footer>
         <div class="footer-bar">
             <nav>
-                <a href="./contact.php">Contact</a>
-                <a href="./privacy.php">Privacy Policy</a>
+                <a href="contact.php">Contact</a>
+                <a href="privacy.php">Privacy Policy</a>
             </nav>
             <div class="footer-socials">
-                <img src="../assets/img/icon_dark/facebook (1).png" alt="Facebook" width="24" height="25">
-                <img src="../assets/img/icon_dark/instagram.png" alt="Instagram" width="24" height="24">
-                <img src="../assets/img/icon_dark/twitter.png" alt="Twitter" width="24" height="23">
+                <a href="https://www.facebook.com/" target="_blank"><img src="../assets/img/social_icon_dark/facebook (1).png" alt="Facebook" width="24" height="25"></a>
+                <a href="http://instagram.com/" target="_blank"><img src="../assets/img/social_icon_dark/instagram.png" alt="Instagram" width="24" height="24"></a>
+                <a href="http://x.com/" target="_blank"><img src="../assets/img/social_icon_dark/twitter.png" alt="Twitter" width="24" height="23"></a>
             </div>
         </div>
     </footer>
