@@ -25,7 +25,7 @@
     <main>
         <section class="hero">
             <p class="hero-title">Easy and affordable <span>travel</span></p>
-            <p class="hero-subtitle">The best travel agency in the Netherlands</p>
+            <p class="hero-subtitle">The best travel agency in the Netherlands.</p>
         </section>
 
         <section class="search-panel">
