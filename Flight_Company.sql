@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Gegenereerd op: 19 mei 2026 om 10:08
+-- Gegenereerd op: 21 mei 2026 om 11:41
 -- Serverversie: 8.4.8
 -- PHP-versie: 8.3.30
 
@@ -24,34 +24,79 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `FLights`
+-- Tabelstructuur voor tabel `accomodations`
+--
+
+CREATE TABLE `accomodations` (
+  `accomodationid` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `peopleamount` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `flights`
 --
 
 CREATE TABLE `flights` (
-  `flightid` int NOT NULL
+  `flightid` int NOT NULL,
+  `departure` varchar(255) NOT NULL,
+  `destination` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `Trip`
+-- Tabelstructuur voor tabel `orders`
 --
 
-CREATE TABLE `trip` (
-  `tripID` int NOT NULL,
+CREATE TABLE `orders` (
+  `orderid` int NOT NULL,
+  `orderdate` datetime NOT NULL,
+  `Sum` double NOT NULL,
+  `userid` int DEFAULT NULL,
+  `tripid` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `reviewid` int NOT NULL,
+  `review` text NOT NULL,
+  `userid` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `trips`
+--
+
+CREATE TABLE `trips` (
+  `tripid` int NOT NULL,
   `location` varchar(255) NOT NULL,
+  `maxpersons` int NOT NULL,
   `price` double DEFAULT NULL,
-  `flightid` int DEFAULT NULL
+  `startdate` datetime NOT NULL,
+  `duration` int NOT NULL,
+  `flightid` int DEFAULT NULL,
+  `accomodationid` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `Users`
+-- Tabelstructuur voor tabel `users`
 --
 
 CREATE TABLE `users` (
-  `userID` int NOT NULL,
+  `userid` int NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` varchar(255) NOT NULL
@@ -62,20 +107,42 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexen voor tabel `FLights`
+-- Indexen voor tabel `accomodations`
+--
+ALTER TABLE `accomodations`
+  ADD PRIMARY KEY (`accomodationid`);
+
+--
+-- Indexen voor tabel `flights`
 --
 ALTER TABLE `flights`
   ADD PRIMARY KEY (`flightid`);
 
 --
--- Indexen voor tabel `Trip`
+-- Indexen voor tabel `orders`
 --
-ALTER TABLE `trip`
-  ADD PRIMARY KEY (`tripid`),
-  ADD KEY `fk_Flight` (`flightid`);
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`orderid`),
+  ADD KEY `fk_orders_user` (`userid`),
+  ADD KEY `fk_orders_trip` (`tripid`);
 
 --
--- Indexen voor tabel `Users`
+-- Indexen voor tabel `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`reviewid`),
+  ADD KEY `fk_reviews_user` (`userid`);
+
+--
+-- Indexen voor tabel `trips`
+--
+ALTER TABLE `trips`
+  ADD PRIMARY KEY (`tripid`),
+  ADD KEY `fk_Flight` (`flightid`),
+  ADD KEY `fk_users_accomodation` (`accomodationid`);
+
+--
+-- Indexen voor tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`userid`);
@@ -85,13 +152,31 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT voor een tabel `Trip`
+-- AUTO_INCREMENT voor een tabel `accomodations`
 --
-ALTER TABLE `trip`
+ALTER TABLE `accomodations`
+  MODIFY `accomodationid` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `orderid` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `reviewid` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `trips`
+--
+ALTER TABLE `trips`
   MODIFY `tripid` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT voor een tabel `Users`
+-- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `userid` int NOT NULL AUTO_INCREMENT;
@@ -101,10 +186,17 @@ ALTER TABLE `users`
 --
 
 --
--- Beperkingen voor tabel `Trip`
+-- Beperkingen voor tabel `orders`
 --
-ALTER TABLE `trip`
-  ADD CONSTRAINT `fk_flight` FOREIGN KEY (`flightid`) REFERENCES `flights` (`flightid`);
+ALTER TABLE `orders`
+  ADD CONSTRAINT `fk_orders_trips` FOREIGN KEY (`tripid`) REFERENCES `trips` (`tripid`),
+  ADD CONSTRAINT `fk_orders_users` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`);
+
+--
+-- Beperkingen voor tabel `reviews`
+--
+ALTER TABLE `reviews`
+  ADD CONSTRAINT `fk_reviews_users` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
