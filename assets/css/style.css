@@ -164,12 +164,116 @@ main {
     color: black;
     gap: 8px;
 }
-.choose-balk{
-width: 100%;
-height: 20px;
-display: flex;
-align-items: center;
-justify-content: center;
+
+.travellers-field {
+    position: relative;
+}
+
+.form-popup {
+    display: none;
+    position: absolute;
+    left: 58%;
+
+}
+.open-button{
+    background-color: #f1a208;
+    color: #ffffff;
+    border: none;
+    min-width: 120px;
+    width: auto;
+    padding: 0 18px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.open-button:hover {
+    background-color: #d68a00;
+    box-shadow: 0 8px 20px rgba(235, 160, 11, 0.3);
+}
+.btn-apply{
+    background-color: #f1a208;
+    color: #ffffff;
+    border: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+}
+ .btn-apply:hover {
+    background-color: #d68a00;
+    box-shadow: 0 8px 20px rgba(235, 160, 11, 0.3);
+}
+.btn-close{
+   
+    color: #000000;
+    border: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn-close:hover {
+    background-color: rgba(128, 128, 128, 0.171);
+    box-shadow: 0 8px 20px rgba(128, 128, 128, 0.3);
+
+
+}
+
+
+.form-actions{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.counter-controls{
+    display: flex;
+    gap: 15px;
+    width: 210px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.form-popup.open {
+    display: block;
+}
+
+.form-container.small {
+    padding: 20px;
+    width: 250px;
+}
+
+.counter-btn{
+
+    background-color: rgba(128, 128, 128, 0.171);
+    color: black;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius:25%;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+    
+.choose-balk {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 
 }
@@ -189,9 +293,8 @@ justify-content: center;
     box-shadow: #969595 0px 4px 12px -2px;
 }
 
-.search-button img {
-    margin-right: 8px;
-}
+/* =============== searForm btn =================== */
+
 
 .testimonial {
     width: 100%;
@@ -398,6 +501,7 @@ justify-content: center;
     box-shadow: 0 8px 20px rgba(241, 162, 8, 0.3);
 }
 
+
 /* ============== Admin Panel =================== */
 .admin-header {
     width: 100%;
@@ -502,7 +606,7 @@ justify-content: center;
 
 .action-button:hover {
     background: #d68a00;
-} 
+}
 
 .action-button.delete {
     background: #e74c3c;
@@ -656,7 +760,7 @@ justify-content: center;
     margin-right: auto;
 }
 
-/* ============= affer pagina ================ */
+/* ============= offer pagina ================ */
 
 
 .offer-section {
