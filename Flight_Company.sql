@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Gegenereerd op: 21 mei 2026 om 11:41
+-- Gegenereerd op: 22 mei 2026 om 11:11
 -- Serverversie: 8.4.8
 -- PHP-versie: 8.3.30
 
@@ -44,6 +44,18 @@ CREATE TABLE `flights` (
   `flightid` int NOT NULL,
   `departure` varchar(255) NOT NULL,
   `destination` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `locations`
+--
+
+CREATE TABLE `locations` (
+  `locationid` int NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `country` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -119,6 +131,12 @@ ALTER TABLE `flights`
   ADD PRIMARY KEY (`flightid`);
 
 --
+-- Indexen voor tabel `locations`
+--
+ALTER TABLE `locations`
+  ADD PRIMARY KEY (`locationid`);
+
+--
 -- Indexen voor tabel `orders`
 --
 ALTER TABLE `orders`
@@ -156,6 +174,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `accomodations`
   MODIFY `accomodationid` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `locations`
+--
+ALTER TABLE `locations`
+  MODIFY `locationid` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `orders`
