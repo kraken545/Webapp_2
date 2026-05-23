@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Gegenereerd op: 22 mei 2026 om 11:11
+-- Gegenereerd op: 23 mei 2026 om 13:02
 -- Serverversie: 8.4.8
 -- PHP-versie: 8.3.30
 
@@ -57,6 +57,20 @@ CREATE TABLE `locations` (
   `city` varchar(255) NOT NULL,
   `country` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `locations`
+--
+
+INSERT INTO `locations` (`locationid`, `city`, `country`) VALUES
+(1, 'Amsterdam', 'Nederland'),
+(2, 'Parijs', 'Frankrijk'),
+(3, 'New York', 'Verenigde Staten'),
+(4, 'Tokyo', 'Japan'),
+(5, 'Barcelona', 'Spanje'),
+(6, 'Londen', 'Verenigd Koninkrijk'),
+(7, 'Sydney', 'Australië'),
+(8, 'Rome', 'Italië');
 
 -- --------------------------------------------------------
 
@@ -179,7 +193,7 @@ ALTER TABLE `accomodations`
 -- AUTO_INCREMENT voor een tabel `locations`
 --
 ALTER TABLE `locations`
-  MODIFY `locationid` int NOT NULL AUTO_INCREMENT;
+  MODIFY `locationid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT voor een tabel `orders`
