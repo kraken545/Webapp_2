@@ -30,22 +30,22 @@
 
         <section class="search-panel">
             <div class="search-label">
-                <div><img src="assets/img/searchBar_icon/icons_darkGreen/location_green.png" alt="" width="15"> From</div>
+                <div>          </div>
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/location_green.png" alt="" width="15"> To</div>
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Departure</div>
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Return</div>
-                <div><img src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="20"> Travelers</div>
+                <!-- <div><img src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="20"> Travelers</div> -->
             </div>
             <form action="" method="post">
            
-            <select class="search-field" name="from" id="" > 
+            <!-- <select class="search-field" name="from" id="" > 
                 <option value="0"><div class="choose-balk"><strong>Destination</strong></div></option>
                 <option value="1">Amsterdam</option>
                 <option value="2">India</option>
                 <option value="3">Aruba</option>
                 <option value="4">USA</option>
                 <option value="5">China</option>
-            </select>
+            </select> -->
             <select class="search-field" value="Destination" name="to" id="">
                 <option value="0"><strong>Destination</strong></option>
                 <option value="1"><strong>Aruba</strong></option>
@@ -61,12 +61,12 @@
             
           
            
-                <div class="search-field travellers-field">
-                    <button type="button" class="open-button" id="add-aantal" onclick="openForm()">add</button>
+                <div class="travellers-field">
+                    <button type="button" class="search-field open-button" id="add-aantal" onclick="openForm()"><img id="people-img" src="assets/img/searchBar_icon/icons_cyan/people_cyan.png" alt="" width="20">Travelers</button>
 
                     <div class="form-popup" id="myForm" aria-hidden="true">
                         <div class="form-container small">
-                            <label><b>Aantal Volwassenen: </b></label>
+                            <label><b>Number of Adults: </b></label>
                             <div class="counter-controls">
                                 <button type="button" id="decrement-people" onclick="decrement()" class="counter-btn">−</button>
                                 <span id="total-people">1</span>

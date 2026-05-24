@@ -34,10 +34,8 @@ function decrement() {
 
 function setForm() {
 	const display = document.getElementById('total-people');
-	const input = document.getElementById('total-people-input');
 	const addButton = document.getElementById('add-aantal');
 	display.textContent = totalPeople;
-	input.value = totalPeople;
 	addButton.textContent = `${totalPeople} travelers`;
 	const decrement = document.getElementById('decrement-people');
 	const increment = document.getElementById('increment-people');
@@ -45,39 +43,34 @@ function setForm() {
 	if(increment) increment.disabled = totalPeople >= totalPeopleMax;
 }
 function apply() {
-	// const addAantal= document.getElementById('add-aantal');
-	// addAantal.textContent = `Has añadido ${totalPeople} viajeros a tu reserva.`;
 	closeForm();
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-	setForm();
-});
 
 
 
-// function closeBigGroup(){
-// 	const bigGroup = document.getElementById('big-group');
-// 	bigGroup.classList.remove('open');
-// }
+function closeBigGroup(){
+	const bigGroup = document.getElementById('big-group');
+	bigGroup.classList.remove('open');
+}
 
-// function openBigGroup() {
-// 	const bigGroup = document.getElementById('big-group');
-// 	bigGroup.classList.add('open');
-// 	setBigGroup();
-// }
+function openBigGroup() {
+	const bigGroup = document.getElementById('big-group');
+	bigGroup.classList.add('open');
+	setBigGroup();
+}
 
-// function applyBigGroup() {
-// 	closeBigGroup();
-// }
+function applyBigGroup() {
+	closeBigGroup();
+}
 
-// function contactUs() {
-// 	window.location.href = './public/contact.php';
-// }
+function contactUs() {
+	window.location.href = './public/contact.php';
+}
 
-// function setBigGroup() {
-// 	const bigGroupInput = (totalPeople - 1);
-// 	const bigGroupDisplay = document.getElementById('big-group-display');
+function setBigGroup() {
+	const bigGroupInput = (totalPeople - 1);
+	const bigGroupDisplay = document.getElementById('big-group-display');
 	
-// }
+}
 
