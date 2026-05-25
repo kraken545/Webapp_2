@@ -66,7 +66,7 @@ include("dbcalls/locations/read.php");
           
            
                 <div class="travellers-field">
-                    <button type="button" class="search-field open-button" id="add-aantal" onclick="openForm()"><img id="people-img" src="assets/img/searchBar_icon/icons_cyan/people_cyan.png" alt="" width="20">Travelers</button>
+                    <button type="button" class="search-field open-button" id="add-aantal" onclick="openForm()"><img id="people-img" src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="20">Travelers</button>
 
                     <div class="form-popup" id="myForm" aria-hidden="true">
                         <div class="form-container small">
@@ -75,7 +75,10 @@ include("dbcalls/locations/read.php");
                                 <button type="button" id="decrement-people" onclick="decrement()" class="counter-btn">−</button>
                                 <span id="total-people">1</span>
                                 <button type="button" id="increment-people" onclick="increment()" class="counter-btn">+</button>
-                                    <!-- <div class="form-popup" id="big-group" aria-hidden="true">
+                                    
+                                <!-- =========== idee voor Grote groepen. popup dat laat weten aan de user dat als hun groep groter dan 10 mensen kunnen ze contact met ons nemen voor een speciale prijs ==================== -->
+                               
+                                <!-- <div class="form-popup" id="big-group" aria-hidden="true">
                                         <div id="big-group-display">Contact us for special price</div>
                                         <button type="button" onclick="contactUs()" class="btn-contact">Contact Us</button>
                                         <button type="button" onclick="closeBigGroup()" class="btn-close">Close</button>
@@ -88,7 +91,7 @@ include("dbcalls/locations/read.php");
                             </div>
                         </div>
                     </div>
-
+                    <!-- // =========== als de user op apply clickt word de data bewaard en de form gaat dicht  ========= -->
                     <input type="hidden" name="people" id="total-people-input" value="1">
                 </div>
 

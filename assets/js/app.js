@@ -31,6 +31,7 @@ function decrement() {
 	}
 
 
+// ============  function om de form te displayen =============
 
 function setForm() {
 	const display = document.getElementById('total-people');
@@ -42,12 +43,14 @@ function setForm() {
 	if(decrement) decrement.disabled = totalPeople <= totalPeopleMin;
 	if(increment) increment.disabled = totalPeople >= totalPeopleMax;
 }
+
+// =========== als de user op apply clickt word de data bewaard en de form gaat dicht  =========
 function apply() {
 	closeForm();
 }
 
 
-
+// <!-- =========== idee voor Grote groepen. popup dat laat weten aan de user dat als hun groep groter dan 10 mensen kunnen ze contact met ons nemen voor een speciale prijs ==================== -->
 
 function closeBigGroup(){
 	const bigGroup = document.getElementById('big-group');
