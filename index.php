@@ -1,23 +1,29 @@
+<?php
+include("dbcalls/conn.php");
+include("dbcalls/locations/read.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Voyage</title>
 </head>
+
 <body class="font">
     <header>
         <div class="nav-bar">
             <a href="./index.php" class="logo-link">
-                <div class="logo"><img src="./assets/img/Logo.png" alt="Voyage" ></div>
+                <div class="logo"><img src="./assets/img/Logo.png" alt="Voyage"></div>
             </a>
             <nav>
                 <a href="./public/accommodation.php">Offers</a>
                 <a href="./public/about.php">About Us</a>
                 <a href="./public/contact.php">Contact</a>
             </nav>
-          
+
             <div class="nav-account"><a href="./private/login.php" class="nav-account-link">My Account</a></div>
         </div>
     </header>
@@ -30,49 +36,58 @@
 
         <section class="search-panel">
             <div class="search-label">
-                <div><img src="assets/img/searchBar_icon/icons_darkGreen/location_green.png" alt="" width="15"> From</div>
+                <div><img src="assets/img/searchBar_icon/icons_darkGreen/location_green.png" alt="" width="15"> From
+                </div>
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/location_green.png" alt="" width="15"> To</div>
-                <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Departure</div>
-                <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Return</div>
-                <div><img src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="20"> Travelers</div>
+                <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18">
+                    Departure</div>
+                <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Return
+                </div>
+                <div><img src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="20"> Travelers
+                </div>
             </div>
-            <form action="" method="get" >
-           
-            <select class="search-field" name="from" id="" placeholder="Destination"> 
-                <option value="0"><div class="choose-balk"><strong>Destination</strong></div></option>
-                <option value="1">Amsterdam</option>
-                <option value="2">India</option>
-                <option value="3">Aruba</option>
-                <option value="4">USA</option>
-                <option value="5">China</option>
-            </select>
-            <select class="search-field" value="Destination" name="to" id="Choose destination">
-                <option value="0"><strong>Destination</strong></option>
-                <option value="1"><strong>Aruba</strong></option>
-                <option value="2"><strong>Tokyo</strong></option>
-                <option value="3"><strong>Changai</strong></option>
-                <option value="4"><strong>India</strong></option>
-                <option value="5"><strong>Amsterdam</strong></option>
+            <form action="" method="get">
 
-            </select>
+                <select class="search-field" name="from" id="" placeholder="Destination">
+                    <option value="0">
+                        <div class="choose-balk"><strong>Destination</strong></div>
+                    </option>
+                    <?php foreach ($result as $locaties) { ?>
+                        <option value="<?php echo $locaties['locationid'] ?>">
+                            <?php echo $locaties['country']; ?>
+                        </option>
+                    <?php } ?>
+                </select>
+                <select class="search-field" value="Destination" name="to" id="Choose destination">
+                    <option value="0"><strong>Destination</strong></option>
+                    <option value="1"><strong>Aruba</strong></option>
+                    <option value="2"><strong>Tokyo</strong></option>
+                    <option value="3"><strong>Changai</strong></option>
+                    <option value="4"><strong>India</strong></option>
+                    <option value="5"><strong>Amsterdam</strong></option>
 
-            <input type="date" class="search-field"  min="2026-06-01" max="2035-12-31" name="departure-date" id="departure-date" >
-            <input type="date" class="search-field"  min="2026-06-01" max="2035-12-31" name="return-date" id="return-date">
-            
+                </select>
 
-           <select class="search-field" name="" id="">
-                <option value="Argentina"></option>
-                <option value="Aruba"></option>
-                <option value="Tokyo"></option>
-                <option value="India"></option>
-                <option value="Amsterdam"></option>
+                <input type="date" class="search-field" min="2026-06-01" max="2035-12-31" name="departure-date"
+                    id="departure-date">
+                <input type="date" class="search-field" min="2026-06-01" max="2035-12-31" name="return-date"
+                    id="return-date">
 
-            </select>
-           
-            
-            <button class="search-button"><img src="assets/img/searchBar_icon/icons_darkGreen/loop.png" alt="Search" width="20" height="20"> Search</button>
+
+                <select class="search-field" name="" id="">
+                    <option value="Argentina"></option>
+                    <option value="Aruba"></option>
+                    <option value="Tokyo"></option>
+                    <option value="India"></option>
+                    <option value="Amsterdam"></option>
+
+                </select>
+
+
+                <button class="search-button"><img src="assets/img/searchBar_icon/icons_darkGreen/loop.png" alt="Search"
+                        width="20" height="20"> Search</button>
             </form>
-            
+
         </section>
 
         <section class="testimonial">
@@ -88,9 +103,12 @@
         </section>
 
         <section class="promo-row">
-            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="" ></div>
-            <div class="promo-card">current offers <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="" ></div>
-            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="" ></div>
+            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg"
+                    alt=""></div>
+            <div class="promo-card">current offers <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="">
+            </div>
+            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg"
+                    alt=""></div>
         </section>
     </main>
 
@@ -101,11 +119,15 @@
                 <a href="./public/privacy.php">Privacy Policy</a>
             </nav>
             <div class="footer-socials">
-                <a href="https://www.facebook.com/" target="_blank"><img src="assets/img/social_icon_dark/facebook (1).png" alt="Facebook" width="24" height="25"></a>
-                <a href="http://instagram.com/" target="_blank"><img src="assets/img/social_icon_dark/instagram.png" alt="Instagram" width="24" height="24"></a>
-                <a href="http://x.com/" target="_blank"><img src="assets/img/social_icon_dark/twitter.png" alt="Twitter" width="24" height="23"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img
+                        src="assets/img/social_icon_dark/facebook (1).png" alt="Facebook" width="24" height="25"></a>
+                <a href="http://instagram.com/" target="_blank"><img src="assets/img/social_icon_dark/instagram.png"
+                        alt="Instagram" width="24" height="24"></a>
+                <a href="http://x.com/" target="_blank"><img src="assets/img/social_icon_dark/twitter.png" alt="Twitter"
+                        width="24" height="23"></a>
             </div>
         </div>
     </footer>
 </body>
+
 </html>
