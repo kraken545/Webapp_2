@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+include("dbcalls/conn.php");
+include("dbcalls/locations/read.php");
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
