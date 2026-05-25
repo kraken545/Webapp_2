@@ -46,15 +46,16 @@
                 <option value="4">USA</option>
                 <option value="5">China</option>
             </select> -->
-            <select class="search-field" value="Destination" name="to" id="">
-                <option value="0"><strong>Destination</strong></option>
-                <option value="1"><strong>Aruba</strong></option>
-                <option value="2"><strong>Tokyo</strong></option>
-                <option value="3"><strong>Changai</strong></option>
-                <option value="4"><strong>India</strong></option>
-                <option value="5"><strong>Amsterdam</strong></option>
-
-            </select>
+           <select class="search-field" name="from" id="" placeholder="Destination">
+                    <option value="0">
+                        <div class="choose-balk"><strong>Destination</strong></div>
+                    </option>
+                    <?php foreach ($result as $locaties) { ?>
+                        <option value="<?php echo $locaties['locationid'] ?>">
+                            <?php echo $locaties['country']; ?>
+                        </option>
+                    <?php } ?>
+                </select>
 
             <input type="date" class="search-field"  min="2026-06-01" max="2035-12-31" name="departure-date" id="departure-date" >
             <input type="date" class="search-field"  min="2026-06-01" max="2035-12-31" name="return-date" id="return-date">
