@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Gegenereerd op: 23 mei 2026 om 13:02
+-- Gegenereerd op: 26 mei 2026 om 09:38
 -- Serverversie: 8.4.8
 -- PHP-versie: 8.3.30
 
@@ -106,13 +106,14 @@ CREATE TABLE `reviews` (
 
 CREATE TABLE `trips` (
   `tripid` int NOT NULL,
-  `location` varchar(255) NOT NULL,
   `maxpersons` int NOT NULL,
   `price` double DEFAULT NULL,
   `startdate` datetime NOT NULL,
   `duration` int NOT NULL,
+  `description` text NOT NULL,
   `flightid` int DEFAULT NULL,
-  `accomodationid` int NOT NULL
+  `accomodationid` int NOT NULL,
+  `locationid` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -171,7 +172,8 @@ ALTER TABLE `reviews`
 ALTER TABLE `trips`
   ADD PRIMARY KEY (`tripid`),
   ADD KEY `fk_Flight` (`flightid`),
-  ADD KEY `fk_users_accomodation` (`accomodationid`);
+  ADD KEY `fk_users_accomodation` (`accomodationid`),
+  ADD KEY `fk_trips_locations` (`locationid`);
 
 --
 -- Indexen voor tabel `users`
@@ -235,6 +237,12 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `reviews`
   ADD CONSTRAINT `fk_reviews_users` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`);
+
+--
+-- Beperkingen voor tabel `trips`
+--
+ALTER TABLE `trips`
+  ADD CONSTRAINT `fk_trips_locations` FOREIGN KEY (`locationid`) REFERENCES `locations` (`locationid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
