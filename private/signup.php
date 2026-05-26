@@ -13,7 +13,7 @@
                 <div class="logo"><img src="../assets/img/Logo.png" alt="Voyage" ></div>
             </a>
             <nav>
-                <a href="../public/accommodation.php">Offers</a>
+                <a href="../public/offers.php">Offers</a>
                 <a href="../public/about.php">About Us</a>
                 <a href="../public/contact.php">Contact</a>
             </nav>
