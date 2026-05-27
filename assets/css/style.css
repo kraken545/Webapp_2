@@ -144,7 +144,7 @@ main {
     display: flex;
     flex-direction: row;
     gap: 93px;
-   
+
 
 
 }
@@ -823,4 +823,48 @@ search-field:hover,
     align-items: center;
     justify-content: center;
 
+}
+
+.offers-card-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+
+.offers-search-form {
+
+    width: min(1000px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background: #f4f4f4;
+    border-radius: 25px;
+
+}
+
+
+.search-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+
+}
+
+.search-label-date {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+
+}
+
+.main-content-offers {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
 }
