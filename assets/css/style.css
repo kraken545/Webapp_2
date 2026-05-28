@@ -119,9 +119,8 @@ main {
 
 .search-panel form {
     width: min(1000px, 100%);
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 20px;
+    display: flex;
+    gap: 25px;
     background: #f4f4f4;
     border-radius: 25px;
     padding: 15px;
@@ -140,12 +139,12 @@ main {
 }
 
 .search-label {
-    width: 1000px;
+    width: 885px;
     height: 20px;
     display: flex;
     flex-direction: row;
-    gap: 99px;
-    padding: 0 20px 25px 50px;
+    gap: 93px;
+
 
 
 }
@@ -164,15 +163,122 @@ main {
     color: black;
     gap: 8px;
 }
-.choose-balk{
-width: 100%;
-height: 20px;
-display: flex;
-align-items: center;
-justify-content: center;
+
+search-field:hover,
+.search-button:hover {
+    background-color: #a7dbce;
+    box-shadow: #a8e7d7de 0px 4px 12px -2px;
+}
+
+.travellers-field {
+    position: relative;
+}
+
+.open-button {
+    background-color: #f1a208;
+    color: white;
+    border: none;
+    min-width: 145px;
+    width: auto;
+    height: 70px;
+    border-radius: 18px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: #969595 0px 4px 12px -2px;
+}
+
+.open-button:hover {
+    background-color: #d68a00;
+    box-shadow: 0 8px 20px rgba(235, 160, 11, 0.3);
+}
+
+.btn-apply {
+    background-color: #f1a208;
+    color: #ffffff;
+    border: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-apply:hover {
+    background-color: #d68a00;
+    box-shadow: 0 8px 20px rgba(235, 160, 11, 0.3);
+}
+
+.btn-close {
+
+    color: #000000;
+    border: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn-close:hover {
+    background-color: rgba(128, 128, 128, 0.171);
+    box-shadow: 0 8px 20px rgba(128, 128, 128, 0.3);
 
 
 }
+
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.counter-controls {
+    display: flex;
+    gap: 15px;
+    width: 210px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-popup.open {
+    display: block;
+    margin-top: 20px;
+}
+
+.form-popup {
+    display: none;
+    position: absolute;
+
+}
+
+.form-container.small {
+    padding: 20px;
+    width: 250px;
+}
+
+.counter-btn {
+
+    background-color: rgba(128, 128, 128, 0.171);
+    color: black;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 25%;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 
 .search-field strong {
     color: black;
@@ -189,9 +295,8 @@ justify-content: center;
     box-shadow: #969595 0px 4px 12px -2px;
 }
 
-.search-button img {
-    margin-right: 8px;
-}
+/* =============== searForm btn =================== */
+
 
 .testimonial {
     width: 100%;
@@ -286,8 +391,8 @@ justify-content: center;
 .page-title {
     font-size: 3rem;
     font-weight: 700;
-    color: #111111;
-    margin-bottom: 16px;
+    color: #6e9c98;
+   padding: 10px;
     text-align: center;
 }
 
@@ -304,7 +409,8 @@ justify-content: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 24px;
-    margin: 30px 0;
+    padding:10px;
+    
 }
 
 .info-card {
@@ -397,6 +503,7 @@ justify-content: center;
     background: #d68a00;
     box-shadow: 0 8px 20px rgba(241, 162, 8, 0.3);
 }
+
 
 /* ============== Admin Panel =================== */
 .admin-header {
@@ -502,7 +609,7 @@ justify-content: center;
 
 .action-button:hover {
     background: #d68a00;
-} 
+}
 
 .action-button.delete {
     background: #e74c3c;
@@ -516,9 +623,12 @@ justify-content: center;
 .text-content {
     background: #ffffff;
     border-radius: 18px;
-    padding: 32px;
+    padding: 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
     color: #3f4a55;
 }
 
@@ -656,11 +766,11 @@ justify-content: center;
     margin-right: auto;
 }
 
-/* ============= affer pagina ================ */
+/* ============= offer pagina ================ */
 
 
 .offer-section {
-    width: 650px;
+    width: 900px;
     height: 230px;
     background: #ffffff;
     display: flex;
@@ -706,5 +816,96 @@ justify-content: center;
     font-weight: 700;
     align-items: center;
     justify-content: center;
+
+}
+
+.offers-card-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 70%;
+
+}
+
+
+.offers-search-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    border-radius: 25px;
+
+}
+
+
+.search-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 30%;
+    height: auto;
+    align-items: center;
+
+}
+.search-section{
+    display: flex;
+    
+
+}
+
+
+.main-content-offers {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 30px;
+    height: auto;
+  
+}
+
+.offers-search-cards {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    height: 40px;
+    background-color: #DDDDFF;
+    border: none;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.search-label-date {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    align-items: center;
+
+}
+
+.offers-search-cards-date-departure {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: auto;
+    background-color: #DDDDFF;
+    align-items: center;
+}
+
+.offer-search-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 18px;
+    background: #DDDDFF;
+    width: 60%;
+    align-self: center;
+    height: 40px;
+    padding: 10px;
+    color: black;
+
+
 
 }

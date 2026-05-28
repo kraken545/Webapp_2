@@ -25,7 +25,7 @@
     <main>
         <section class="page-section">
             <h1 class="page-title">About Voyage</h1>
-            <p class="page-subtitle">Your trusted partner for affordable and easy travel experiences</p>
+            <p class="page-subtitle"><strong> trusted partner for affordable and easy travel experiences</strong></p>
         </section>
 
         <section class="info-grid">
