@@ -645,7 +645,7 @@ background: #ffffff;
     display: flex;
     flex-direction: column;
     gap: 25px;
-    width: min(950px, 100%);
+    width: min(1000px, 100%);
    
     color: #3f4a55;
 }
