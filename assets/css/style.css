@@ -492,8 +492,8 @@ background: #ffffff;
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #f1a208;
-    box-shadow: 0 0 0 3px rgba(241, 162, 8, 0.1);
+    border-color: #6e9c98;
+    box-shadow: 0 0 0 3px hsla(175, 44%, 62%, 0.3);
 }
 
 .form-group textarea {
@@ -654,12 +654,16 @@ background: #ffffff;
     font-size: 1.5rem;
     color: #6e9c98;
     font-weight: 700;
-    margin-top: 24px;
-    margin-bottom: 12px;
+    
+    align-self: center;
 }
 
-.text-content h3:first-child {
+/* .text-content h3:first-child {
     margin-top: 0;
+} */
+ .text-content span {
+  
+    align-self: center;
 }
 
 .text-content p {
