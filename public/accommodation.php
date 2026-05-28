@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+include("../dbcalls/conn.php");
+include("../dbcalls/locations/read.php");
+?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -30,19 +33,86 @@
       <section class="search-section-container">
         <div class="search-section">
           <form class="offers-search-form">
-            <input type="text" placeholder="Travelers" name="travalers" />
-            <div class="search-label-date">
-              <input type="date" name="departure-date" />
+            <div class="travellers-field">
+                    <button type="button" class="offers-search-cards" id="add-aantal" onclick="openForm()"><img id="people-img" src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="20">Travelers</button>
+
+                    <div class="form-popup" id="myForm" aria-hidden="true">
+                        <div class="form-container small">
+                            <label><b>Number of Adults: </b></label>
+                            <div class="counter-controls">
+                                <button type="button" id="decrement-people" onclick="decrement()" class="counter-btn">−</button>
+                                <span id="total-people">1</span>
+                                <button type="button" id="increment-people" onclick="increment()" class="counter-btn">+</button>
+                           
+                            </div>
+                           
+                            <div class="form-actions">
+                                <button type="button" onclick="apply()" class="btn-apply">Apply</button>
+                                <button type="button" onclick="closeForm()" class="btn-close">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // =========== als de user op apply clickt word de data bewaard en de form gaat dicht  ========= -->
+                    <input type="hidden" name="people" id="total-people-input" value="1">
+                </div>
+            <div class="offers-search-cards">
+                <div>Departure Date</div>
+              <input type="date" name="departure-date"/>
             </div>
-            <div class="search-label-date">
-              <div>start date</div>
-              <div>end date</div>
+            <div class="offers-search-cards-date-departure">
+              <div class="search-label-date">
+                <div>start date</div>
+                <div>end date</div>
+              </div>
+              <div class="search-label-date">
+                <input type="date" name="start-date" />
+                <input type="date" name="end-date" />
+              </div>
             </div>
-            <div>
-              <input type="date" name="start-date" />
-              <input type="date" name="end-date" />
-            </div>
-            <button type="submit">Search</button>
+            <select class="offers-search-cards" name="from" id="" placeholder="Destination">
+                    <option value="0">
+                        <div class="choose-balk"><strong>Destination</strong></div>
+                    </option>
+                    <?php foreach ($result as $locaties) { ?>
+                        <option value="<?php echo $locaties['locationid'] ?>">
+                            <?php echo $locaties['country']; ?>
+                        </option>
+                    <?php } ?>
+                    
+            </select>
+            <select class="offers-search-cards" name="airport" id="" placeholder="Airport">
+                    <option value="0">
+                    <div class="choose-balk"><strong>Airport</strong></div>
+                    </option>
+                    <option value="1">Amsterdam Schiphol</option>
+                    <option value="2">Rotterdam The Hague</option>
+                    <option value="3">Eindhoven</option>
+                    <option value="4">Maastricht Aachen</option>
+                    <option value="5">Groningen Eelde</option>
+            </select>
+
+            <select class="offers-search-cards" name="accommodation-type" id="" placeholder="Accommodation Type">
+                    <option value="0">
+                    <div class="choose-balk"><strong>Accommodation Type</strong></div>
+                    </option>
+                    <option value="1">Hotel</option>
+                    <option value="2">Apartment</option>
+                    <option value="3">Hostel</option>
+                    <option value="4">Resort</option>
+                    <option value="5">Villa</option>
+            </select>
+            <select class="offers-search-cards" name="stars-balk" id="" placeholder="Stars">
+                    <option value="0">
+                    <div class="choose-balk"><strong>Stars</strong></div>
+                    </option>
+                    <option value="1">★</option>
+                    <option value="2">★★</option>
+                    <option value="3">★★★</option>
+                    <option value="4">★★★★</option>
+                    <option value="5">★★★★★</option>
+
+            </select>
+            <button type="submit" class="offer-search-button">Search</button>
           </form>
         </div>
       </section>
@@ -188,4 +258,5 @@
       </div>
     </footer>
   </body>
+  <script src="../assets/js/app.js"></script>
 </html>
