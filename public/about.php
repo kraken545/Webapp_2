@@ -45,7 +45,8 @@
 
         <section class="text-content">
             <h3>Our Mission</h3>
-            <p>At Voyage, we believe that travel should be accessible to everyone. Our mission is to make booking flights, accommodations, and vacation packages as easy and affordable as possible. We work directly with the best providers to bring you the best deals in the Netherlands.</p>
+            <p>At Voyage, we believe that travel should be accessible to everyone. Our mission is to make booking flights, accommodations, and vacation packages as easy and affordable as possible.</p>
+                <p> We work directly with the best providers to bring you the best deals in the Netherlands.</>
 
             <h3>Why Choose Voyage?</h3>
             <p><strong>Trusted by thousands:</strong> Join thousands of happy travelers who have booked their adventures with us.</p>
