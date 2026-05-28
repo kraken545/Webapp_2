@@ -1,6 +1,6 @@
 <?php
-include("dbcalls/conn.php");
-include("dbcalls/offers/read.php");
+include("../dbcalls/conn.php");
+include("../dbcalls/offers/read.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
