@@ -1,7 +1,8 @@
 <?php
 include("../dbcalls/conn.php");
-include("../dbcalls/locations/read.php");
-?><!DOCTYPE html>
+include("../dbcalls/offers/read.php");
+?>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,20 +12,17 @@ include("../dbcalls/locations/read.php");
   </head>
   <body class="font">
     <header>
-      <div class="nav-bar">
-        <a href="../index.php" class="logo-link">
-          <div class="logo">
-            <img src="../assets/img/Logo.png" alt="Voyage" />
-          </div>
-        </a>
-        <nav>
-          <a href="./accommodation.php">Offers</a>
-          <a href="./about.php">About Us</a>
-          <a href="./contact.php">Contact</a>
-        </nav>
-
-        <div class="nav-account">
-          <a href="../private/login.php" class="nav-account-link">My Account</a>
+        <div class="nav-bar">
+             <a href="../index.php" class="logo-link">
+                <div class="logo"><img src="../assets/img/Logo.png" alt="Voyage" ></div>
+            </a>
+            <nav>
+                <a href="./offers.php">Offers</a>
+                <a href="./about.php">About Us</a>
+                <a href="./contact.php">Contact</a>
+            </nav>
+          
+            <div class="nav-account"><a href="../private/login.php" class="nav-account-link">My Account</a></div>
         </div>
       </div>
     </header>
@@ -101,17 +99,7 @@ include("../dbcalls/locations/read.php");
                     <option value="4">Resort</option>
                     <option value="5">Villa</option>
             </select>
-            <select class="offers-search-cards" name="stars-balk" id="" placeholder="Stars">
-                    <option value="0">
-                    <div class="choose-balk"><strong>Stars</strong></div>
-                    </option>
-                    <option value="1">★</option>
-                    <option value="2">★★</option>
-                    <option value="3">★★★</option>
-                    <option value="4">★★★★</option>
-                    <option value="5">★★★★★</option>
-
-            </select>
+          
             <button type="submit" class="offer-search-button">Search</button>
           </form>
         </div>

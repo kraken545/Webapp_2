@@ -1,26 +1,29 @@
 <?php
 include("dbcalls/conn.php");
 include("dbcalls/locations/read.php");
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Voyage</title>
 </head>
+
 <body class="font">
     <header>
         <div class="nav-bar">
             <a href="./index.php" class="logo-link">
-                <div class="logo"><img src="./assets/img/Logo.png" alt="Voyage" ></div>
+                <div class="logo"><img src="./assets/img/Logo.png" alt="Voyage"></div>
             </a>
             <nav>
-                <a href="./public/accommodation.php">Offers</a>
+                <a href="./public/offers.php">Offers</a>
                 <a href="./public/about.php">About Us</a>
                 <a href="./public/contact.php">Contact</a>
             </nav>
-          
+
             <div class="nav-account"><a href="./private/login.php" class="nav-account-link">My Account</a></div>
         </div>
     </header>
@@ -98,7 +101,7 @@ include("dbcalls/locations/read.php");
             
             <button type="submit" class="search-button"><img src="assets/img/searchBar_icon/icons_darkGreen/loop.png" alt="Search" width="20" height="20"> Search</button>
             </form>
-            
+
         </section>
 
         <section class="testimonial">
@@ -114,9 +117,12 @@ include("dbcalls/locations/read.php");
         </section>
 
         <section class="promo-row">
-            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="" ></div>
-            <div class="promo-card">current offers <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="" ></div>
-            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="" ></div>
+            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg"
+                    alt=""></div>
+            <div class="promo-card">current offers <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="">
+            </div>
+            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg"
+                    alt=""></div>
         </section>
     </main>
 
@@ -127,9 +133,12 @@ include("dbcalls/locations/read.php");
                 <a href="./public/privacy.php">Privacy Policy</a>
             </nav>
             <div class="footer-socials">
-                <a href="https://www.facebook.com/" target="_blank"><img src="assets/img/social_icon_dark/facebook (1).png" alt="Facebook" width="24" height="25"></a>
-                <a href="http://instagram.com/" target="_blank"><img src="assets/img/social_icon_dark/instagram.png" alt="Instagram" width="24" height="24"></a>
-                <a href="http://x.com/" target="_blank"><img src="assets/img/social_icon_dark/twitter.png" alt="Twitter" width="24" height="23"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img
+                        src="assets/img/social_icon_dark/facebook (1).png" alt="Facebook" width="24" height="25"></a>
+                <a href="http://instagram.com/" target="_blank"><img src="assets/img/social_icon_dark/instagram.png"
+                        alt="Instagram" width="24" height="24"></a>
+                <a href="http://x.com/" target="_blank"><img src="assets/img/social_icon_dark/twitter.png" alt="Twitter"
+                        width="24" height="23"></a>
             </div>
         </div>
     </footer>

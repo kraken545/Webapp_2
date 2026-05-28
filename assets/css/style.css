@@ -423,6 +423,23 @@ search-field:hover,
     gap: 16px;
     text-align: center;
 }
+.info-card-about h3 {
+    font-size: 1.3rem;
+    color: #0a2239;
+    font-weight: 700;
+
+}
+.info-card-about{
+background: #ffffff;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+
+}
 
 .info-card h3 {
     font-size: 1.3rem;
@@ -475,8 +492,8 @@ search-field:hover,
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #6e9c98;
-    box-shadow: 0 0 0 3px #6e9c987a;
+    border-color: #f1a208;
+    box-shadow: 0 0 0 3px rgba(241, 162, 8, 0.1);
 }
 
 .form-group textarea {
@@ -627,8 +644,9 @@ search-field:hover,
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    align-items: center;
+    gap: 25px;
+    width: min(950px, 100%);
+   
     color: #3f4a55;
 }
 
@@ -636,11 +654,17 @@ search-field:hover,
     font-size: 1.5rem;
     color: #6e9c98;
     font-weight: 700;
-   
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.text-content h3:first-child {
+    margin-top: 0;
 }
 
 .text-content p {
-    margin-bottom: 16px;
+    padding:5px;
+   
 }
 
 /* Navigation Account Link */
