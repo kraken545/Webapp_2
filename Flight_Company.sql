@@ -7,6 +7,9 @@
 -- Serverversie: 8.4.8
 -- PHP-versie: 8.3.30
 
+CREATE DATABASE IF NOT EXISTS Flight_Company;
+USE Flight_Company;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -198,7 +201,6 @@ ALTER TABLE `reviews`
 --
 ALTER TABLE `trips`
   ADD PRIMARY KEY (`tripid`),
-  ADD KEY `fk_Flight` (`flightid`),
   ADD KEY `fk_users_accommodation` (`accommodationid`),
   ADD KEY `fk_trips_locations` (`locationid`);
 
@@ -275,7 +277,9 @@ ALTER TABLE `reviews`
 -- Beperkingen voor tabel `trips`
 --
 ALTER TABLE `trips`
-  ADD CONSTRAINT `fk_trips_locations` FOREIGN KEY (`locationid`) REFERENCES `locations` (`locationid`);
+  ADD CONSTRAINT `fk_trips_locations` FOREIGN KEY (`locationid`) REFERENCES `locations` (`locationid`),
+  ADD CONSTRAINT `fk_trips_flights` FOREIGN KEY (`flightid`) REFERENCES `flights` (`flightid`),
+  ADD CONSTRAINT `fk_trips_accommodations` FOREIGN KEY (`accommodationid`) REFERENCES `accommodations` (`accommodationid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
