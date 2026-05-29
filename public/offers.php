@@ -99,17 +99,7 @@ include("../dbcalls/offers/read.php");
                     <option value="4">Resort</option>
                     <option value="5">Villa</option>
             </select>
-            <select class="offers-search-cards" name="stars-balk" id="" placeholder="Stars">
-                    <option value="0">
-                    <div class="choose-balk"><strong>Stars</strong></div>
-                    </option>
-                    <option value="1">★</option>
-                    <option value="2">★★</option>
-                    <option value="3">★★★</option>
-                    <option value="4">★★★★</option>
-                    <option value="5">★★★★★</option>
-
-            </select>
+          
             <button type="submit" class="offer-search-button">Search</button>
           </form>
         </div>
