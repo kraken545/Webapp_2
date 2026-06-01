@@ -59,7 +59,6 @@ main {
 .footer-bar nav a {
     color: #ffffff;
     text-decoration: none;
-    /* font-size: 0.95rem; */
     letter-spacing: 0.04em;
     text-transform: uppercase;
     opacity: 0.9;
@@ -90,6 +89,25 @@ main {
     flex-direction: column;
     gap: 30px;
     align-items: center;
+}
+
+.main-admin {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  
+    background-color: #f4f4f4;
+}
+
+.admin-hero {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
 }
 
 .hero {
@@ -162,6 +180,22 @@ main {
     padding: 10px;
     color: black;
     gap: 8px;
+}
+.days-field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    
+    width: 40%;
+    height: 40px;
+   align-self: center;
+    color: black;
+    padding: 10px;
+
+
+
 }
 
 search-field:hover,
@@ -392,7 +426,7 @@ search-field:hover,
     font-size: 3rem;
     font-weight: 700;
     color: #6e9c98;
-   padding: 10px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -409,8 +443,8 @@ search-field:hover,
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 24px;
-    padding:10px;
-    
+    padding: 10px;
+
 }
 
 .info-card {
@@ -423,14 +457,16 @@ search-field:hover,
     gap: 16px;
     text-align: center;
 }
+
 .info-card-about h3 {
     font-size: 1.3rem;
     color: #0a2239;
     font-weight: 700;
 
 }
-.info-card-about{
-background: #ffffff;
+
+.info-card-about {
+    background: #ffffff;
     border-radius: 18px;
     padding: 28px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -524,12 +560,12 @@ background: #ffffff;
 
 /* ============== Admin Panel =================== */
 .admin-header {
-    width: 100%;
+    width: 40%;
     background: #f1a208;
     color: #ffffff;
     padding: 20px;
     border-radius: 15px;
-    margin-bottom: 30px;
+   
     text-align: center;
 }
 
@@ -543,19 +579,21 @@ background: #ffffff;
 }
 
 .admin-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    width: 50%;
     gap: 20px;
-    margin-bottom: 40px;
+    
 }
 
 .admin-card {
     background: #ffffff;
     border-radius: 15px;
-    padding: 24px;
+    width: 100%;
+    padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     border-left: 4px solid #f1a208;
     text-align: center;
+   
 }
 
 .admin-card h3 {
@@ -645,8 +683,8 @@ background: #ffffff;
     display: flex;
     flex-direction: column;
     gap: 25px;
-    width: min(950px, 100%);
-   
+    width: min(1000px, 100%);
+
     color: #3f4a55;
 }
 
@@ -654,21 +692,21 @@ background: #ffffff;
     font-size: 1.5rem;
     color: #6e9c98;
     font-weight: 700;
-    
+
     align-self: center;
 }
 
 /* .text-content h3:first-child {
     margin-top: 0;
 } */
- .text-content span {
-  
+.text-content span {
+
     align-self: center;
 }
 
 .text-content p {
-    padding:5px;
-   
+    padding: 5px;
+
 }
 
 /* Navigation Account Link */
@@ -870,9 +908,10 @@ background: #ffffff;
     align-items: center;
 
 }
-.search-section{
+
+.search-section {
     display: flex;
-    
+
 
 }
 
@@ -883,7 +922,7 @@ background: #ffffff;
     flex-direction: row;
     gap: 30px;
     height: auto;
-  
+
 }
 
 .offers-search-cards {
