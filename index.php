@@ -39,19 +39,11 @@ include("dbcalls/locations/read.php");
                 <div>          </div>
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/location_green.png" alt="" width="15"> To</div>
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Departure</div>
-                <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Return</div>
-                <!-- <div><img src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="20"> Travelers</div> -->
+                <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Days</div>
+                <div><img src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="18"> People</div>
             </div>
             <form action="" method="post">
            
-            <!-- <select class="search-field" name="from" id="" > 
-                <option value="0"><div class="choose-balk"><strong>Destination</strong></div></option>
-                <option value="1">Amsterdam</option>
-                <option value="2">India</option>
-                <option value="3">Aruba</option>
-                <option value="4">USA</option>
-                <option value="5">China</option>
-            </select> -->
            <select class="search-field" name="from" id="" placeholder="Destination">
                     <option value="0">
                         <div class="choose-balk"><strong>Destination</strong></div>
@@ -64,56 +56,92 @@ include("dbcalls/locations/read.php");
                 </select>
 
             <input type="date" class="search-field"  min="2026-06-01" max="2035-12-31" name="departure-date" id="departure-date" >
-            <input type="date" class="search-field"  min="2026-06-01" max="2035-12-31" name="return-date" id="return-date">
             
-          
-           
-                <div class="travellers-field">
-                    <button type="button" class="search-field open-button" id="add-aantal" onclick="openForm()"><img id="people-img" src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="20">Travelers</button>
-
-                    <div class="form-popup" id="myForm" aria-hidden="true">
-                        <div class="form-container small">
-                            <label><b>Number of Adults: </b></label>
-                            <div class="counter-controls">
-                                <button type="button" id="decrement-people" onclick="decrement()" class="counter-btn">−</button>
-                                <span id="total-people">1</span>
-                                <button type="button" id="increment-people" onclick="increment()" class="counter-btn">+</button>
-                                    
-                                <!-- =========== idee voor Grote groepen. popup dat laat weten aan de user dat als hun groep groter dan 10 mensen kunnen ze contact met ons nemen voor een speciale prijs ==================== -->
-                               
-                                <!-- <div class="form-popup" id="big-group" aria-hidden="true">
-                                        <div id="big-group-display">Contact us for special price</div>
-                                        <button type="button" onclick="contactUs()" class="btn-contact">Contact Us</button>
-                                        <button type="button" onclick="closeBigGroup()" class="btn-close">Close</button>
-                                    </div> -->
-                            </div>
-                           
-                            <div class="form-actions">
-                                <button type="button" onclick="apply()" class="btn-apply">Apply</button>
-                                <button type="button" onclick="closeForm()" class="btn-close">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- // =========== als de user op apply clickt word de data bewaard en de form gaat dicht  ========= -->
-                    <input type="hidden" name="people" id="total-people-input" value="1">
-                </div>
+                
+            <input type="number" class="search-field" name="days" id="add-days" min="1" max="30" placeholder="Days">
+             
+               
+         <input type="number" class="search-field" name="people" id="total-people-input" min="1" max="10" value="1">
+              
 
             
-            <button type="submit" class="search-button"><img src="assets/img/searchBar_icon/icons_darkGreen/loop.png" alt="Search" width="20" height="20"> Search</button>
+            <button type="submit" class="search-button"><img src="assets/img/searchBar_icon/icons_cyan/loop_cyan.png" alt="Search" width="20" height="20"> Search</button>
             </form>
 
         </section>
 
         <section class="testimonial">
-            <div class="testimonial-card">
-                <p class="quote">Everything was easy to find and clearly presented, including the extra options.</p>
-                <p class="review-author">— Paul V</p>
-                <div class="testimonial-meta">
-                    <span class="truststars">★★★★★</span>
-                    <span>Verified</span>
+            <h2 class="testimonial-title">What Our Customers Say</h2>
+            <div class="carousel-controls">
+                <button type="button" class="carousel-btn carousel-btn-left" onclick="scrollCarouselLeft()">‹</button>
+                <div class="reviews-carousel" id="reviewsCarousel">
+                <div class="review-card">
+                    <p class="quote">Everything was easy to find and clearly presented, including the extra options.</p>
+                    <p class="review-author">— Paul V</p>
+                    <div class="testimonial-meta">
+                        <span class="truststars">★★★★★</span>
+                        <span>Verified</span>
+                    </div>
                 </div>
-            </div>
-            <div class="testimonial-footer">TrustScore 4.5</div>
+                <div class="review-card">
+                    <p class="quote">Amazing experience from booking to landing. Highly recommended!</p>
+                    <p class="review-author">— Sarah M</p>
+                    <div class="testimonial-meta">
+                        <span class="truststars">★★★★★</span>
+                        <span>Verified</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p class="quote">Best travel agency I've ever used. Great prices and support.</p>
+                    <p class="review-author">— John D</p>
+                    <div class="testimonial-meta">
+                        <span class="truststars">★★★★★</span>
+                        <span>Verified</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p class="quote">Best travel agency I've ever used. Great prices and support.</p>
+                    <p class="review-author">— John D</p>
+                    <div class="testimonial-meta">
+                        <span class="truststars">★★★★★</span>
+                        <span>Verified</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p class="quote">Best travel agency I've ever used. Great prices and support.</p>
+                    <p class="review-author">— John D</p>
+                    <div class="testimonial-meta">
+                        <span class="truststars">★★★★★</span>
+                        <span>Verified</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <p class="quote">Best travel agency I've ever used. Great prices and support.</p>
+                    <p class="review-author">— John D</p>
+                    <div class="testimonial-meta">
+                        <span class="truststars">★★★★★</span>
+                        <span>Verified</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p class="quote">Best travel agency I've ever used. Great prices and support.</p>
+                    <p class="review-author">— John D</p>
+                    <div class="testimonial-meta">
+                        <span class="truststars">★★★★★</span>
+                        <span>Verified</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p class="quote">Best travel agency I've ever used. Great prices and support.</p>
+                    <p class="review-author">— John D</p>
+                    <div class="testimonial-meta">
+                        <span class="truststars">★★★★★</span>
+                        <span>Verified</span>
+                    </div>
+                </div>
+                </div>
+                <button type="button" class="carousel-btn carousel-btn-right" onclick="scrollCarouselRight()">›</button>
         </section>
 
         <section class="promo-row">
@@ -124,6 +152,7 @@ include("dbcalls/locations/read.php");
             <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg"
                     alt=""></div>
         </section>
+        
     </main>
 
     <footer>
