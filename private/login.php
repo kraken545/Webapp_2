@@ -18,7 +18,7 @@
                 <a href="../public/contact.php">Contact</a>
             </nav>
            
-            <div class="nav-account"><a href="./login.php" class="nav-account-link">My Account</a></div>
+            <div class="nav-account"><a href="./admin.php" class="nav-account-link"> Admin</a></div>
         </div>
     </header>
 
