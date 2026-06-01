@@ -1,12 +1,14 @@
 <?php
 
-$sql = "SELECT t.tripid, t.price, t.startdate, t.duration,
+$sql = "SELECT 
 
-       a.name, a.type, a.image,
+    t.tripid, t.price, t.startdate, t.duration, t.description,
 
-       f.departure,
+    a.name, a.type, a.image,
 
-       l.city, l.country
+    f.departure,
+
+    l.city, l.country
 
 FROM trips t
 
