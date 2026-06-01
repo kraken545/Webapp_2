@@ -1,4 +1,7 @@
 
+let totalDays = 1;
+const totalDaysMin = 1;
+const totalDaysMax = 30;
 
 let totalPeople = 1;
 const totalPeopleMin = 1;
@@ -20,18 +23,18 @@ function closeForm() {
 
 
 
-function increment() {
+function incrementPoeple() {
 		totalPeople++;
 		setForm();
 	}
 
-function decrement() {
+function decrementPoeple() {
 		totalPeople--;
 		setForm();
 	}
 
 
-// ============  function om de form te displayen =============
+// ============  function om de poeple form te  displayen =============
 
 function setForm() {
 	const display = document.getElementById('total-people');
@@ -50,30 +53,22 @@ function apply() {
 }
 
 
-// <!-- =========== idee voor Grote groepen. popup dat laat weten aan de user dat als hun groep groter dan 10 mensen kunnen ze contact met ons nemen voor een speciale prijs ==================== -->
+// ================ days form ================
+// function applyDays() {
+// 	const display = document.getElementById('total-days');
+// 	const addButton = document.getElementById('add-days');
+// 	display.textContent = totalDays;
+// 	addButton.textContent = `${totalDays} days`;
 
-function closeBigGroup(){
-	const bigGroup = document.getElementById('big-group');
-	bigGroup.classList.remove('open');
-}
+// 	closeForm();
+// }
 
-function openBigGroup() {
-	const bigGroup = document.getElementById('big-group');
-	bigGroup.classList.add('open');
-	setBigGroup();
-}
+// function incrementDays() {
+// 		totalDays++;
+// 		setForm();
+// 	}
 
-function applyBigGroup() {
-	closeBigGroup();
-}
-
-function contactUs() {
-	window.location.href = './public/contact.php';
-}
-
-function setBigGroup() {
-	const bigGroupInput = (totalPeople - 1);
-	const bigGroupDisplay = document.getElementById('big-group-display');
-	
-}
-
+// function decrementPoeple() {
+// 		totalDays--;
+// 		setForm();
+// 	}
