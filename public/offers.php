@@ -1,6 +1,9 @@
 <?php
 include("../dbcalls/conn.php");
 include("../dbcalls/offers/read.php");
+$offers = $result;
+include("../dbcalls/locations/read.php");
+$locations = $result;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +74,7 @@ include("../dbcalls/offers/read.php");
                     <option value="0">
                         <div class="choose-balk"><strong>Destination</strong></div>
                     </option>
-                    <?php foreach ($result as $locaties) { ?>
+                <?php foreach ($locations as $locaties) { ?>
                         <option value="<?php echo $locaties['locationid'] ?>">
                             <?php echo $locaties['country']; ?>
                         </option>
@@ -105,113 +108,55 @@ include("../dbcalls/offers/read.php");
         </div>
       </section>
       <section class="offers-card-section">
-        <div class="offer-section">
-          <div>
-            <img
-              src="../assets/img/test_img/1246280_16061017110043391702.png"
-              alt=""
-              width="100"
-              height="100"
-            />
-          </div>
-          <div class="offer-beschrijving">
-            <div>hotel mitsis</div>
-            <div><span class="hotel-stars">★★★★★</span></div>
-            <div>tsvilli - zakynthos - Griekenland</div>
-            <div>dobberen in prachtige zwembaden</div>
-            <div>glijbanen voor kinderplezier</div>
-            <div>fit worden in onze gym</div>
-          </div>
-          <div class="offer-prijs">
-            <div>pp. vanaf*</div>
-            <div>€ 529,-</div>
-            <div>ma 19 okt</div>
-            <div>vanaf amsterdam</div>
-            <div>all inclusive</div>
-            <button>Bekijk Vakantie</button>
-          </div>
-        </div>
-
-        <div class="offer-section">
-          <div>
-            <img
-              src="../assets/img/test_img/1246280_16061017110043391702.png"
-              alt=""
-              width="100"
-              height="100"
-            />
-          </div>
-          <div class="offer-beschrijving">
-            <div>hotel mitsis</div>
-            <div><span class="hotel-stars">★★★★★</span></div>
-            <div>tsvilli - zakynthos - Griekenland</div>
-            <div>dobberen in prachtige zwembaden</div>
-            <div>glijbanen voor kinderplezier</div>
-            <div>fit worden in onze gym</div>
-          </div>
-          <div class="offer-prijs">
-            <div>pp. vanaf*</div>
-            <div>€ 529,-</div>
-            <div>ma 19 okt</div>
-            <div>vanaf amsterdam</div>
-            <div>all inclusive</div>
-            <button>Bekijk Vakantie</button>
-          </div>
-        </div>
-
-        <div class="offer-section">
-          <div>
-            <img
-              src="../assets/img/test_img/1246280_16061017110043391702.png"
-              alt=""
-              width="100"
-              height="100"
-            />
-          </div>
-          <div class="offer-beschrijving">
-            <div>hotel mitsis</div>
-            <div><span class="hotel-stars">★★★★★</span></div>
-            <div>tsvilli - zakynthos - Griekenland</div>
-            <div>dobberen in prachtige zwembaden</div>
-            <div>glijbanen voor kinderplezier</div>
-            <div>fit worden in onze gym</div>
-          </div>
-          <div class="offer-prijs">
-            <div>pp. vanaf*</div>
-            <div>€ 529,-</div>
-            <div>ma 19 okt</div>
-            <div>vanaf amsterdam</div>
-            <div>all inclusive</div>
-            <button>Bekijk Vakantie</button>
-          </div>
-        </div>
-
-        <div class="offer-section">
-          <div>
-            <img
-              src="../assets/img/test_img/1246280_16061017110043391702.png"
-              alt=""
-              width="100"
-              height="100"
-            />
-          </div>
-          <div class="offer-beschrijving">
-            <div>hotel mitsis</div>
-            <div><span class="hotel-stars">★★★★★</span></div>
-            <div>tsvilli - zakynthos - Griekenland</div>
-            <div>dobberen in prachtige zwembaden</div>
-            <div>glijbanen voor kinderplezier</div>
-            <div>fit worden in onze gym</div>
-          </div>
-          <div class="offer-prijs">
-            <div>pp. vanaf*</div>
-            <div>€ 529,-</div>
-            <div>ma 19 okt</div>
-            <div>vanaf amsterdam</div>
-            <div>all inclusive</div>
-            <button>Bekijk Vakantie</button>
-          </div>
-        </div>
+        <?php if (!empty($offers)) : ?>
+          <?php foreach ($offers as $offer)  :?>
+            <div class="offer-section">
+              <div>
+                <?php
+                if (!empty($offer['image'])) {
+                    $imageSrc = '..' . $offer['image'];
+                } else {
+                    $imageSrc = '../assets/img/placeholder.png';
+                }
+                ?>
+                <img
+                  src="<?php echo $imageSrc; ?>"
+                  alt="Accommodation image"
+                  width="100"
+                  height="100"
+                />
+              </div>
+              <div class="offer-beschrijving">
+                <div><?php echo $offer['name']; ?></div>
+                <div>
+                  <?php echo $offer['city'] . ' - ' . $offer['country']; ?>
+                </div>
+                <div><?php echo $offer['description']; ?></div>
+                <div><?php echo $offer['type']; ?></div>
+                <div><?php echo $offer['duration']; ?> days</div>
+              </div>
+              <div class="offer-prijs">
+                <div>pp. vanaf*</div>
+                <div>€ <?php echo number_format((float)$offer['price'], 0, ',', '.'); ?>-</div>
+                <div><?php echo date('D d M', strtotime($offer['startdate'])); ?></div>
+                <div>
+                  <?php
+                  if (!empty($offer['departure'])) {
+                      echo ('Vanaf ' . $offer['departure']);
+                  }
+                  else{
+                    echo('geen vlucht');
+                  }
+                  ?>
+                </div>
+                <div><?php echo $offer['type']; ?></div>
+                <button type="button">Bekijk Vakantie</button>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        <?php else : ?>
+          <p>No offers found.</p>
+        <?php endif; ?>
       </section>
     </main>
     <footer>
