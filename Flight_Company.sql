@@ -3,12 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Gegenereerd op: 26 mei 2026 om 10:04
+-- Gegenereerd op: 01 jun 2026 om 13:47
 -- Serverversie: 8.4.8
 -- PHP-versie: 8.3.30
-
-CREATE DATABASE IF NOT EXISTS Flight_Company;
-USE Flight_Company;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,22 +31,23 @@ CREATE TABLE `accommodations` (
   `accommodationid` int NOT NULL,
   `name` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
-  `peopleamount` int NOT NULL
+  `peopleamount` int NOT NULL,
+  `image` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `accommodations`
 --
 
-INSERT INTO `accommodations` (`accommodationid`, `name`, `type`, `peopleamount`) VALUES
-(1, 'Hotel V Nesplein', 'Hotel', 4),
-(2, 'Hotel Le Marais', 'Hotel', 2),
-(3, 'The Manhattan Hotel', 'Hotel', 10),
-(4, 'Tokyo Guesthouse Asakusa', 'Guesthouse', 5),
-(5, 'Hotel Arts Barcelona', 'Hotel', 6),
-(6, 'The Savoy', 'Hotel', 3),
-(7, 'Sydney Harbour Lodge', 'Lodge', 8),
-(8, 'Hotel Bella Roma', 'Hotel', 4);
+INSERT INTO `accommodations` (`accommodationid`, `name`, `type`, `peopleamount`, `image`) VALUES
+(1, 'Hotel V Nesplein', 'Hotel', 4, '/assets/img/hotel.png'),
+(2, 'Hotel Le Marais', 'Hotel', 2, NULL),
+(3, 'The Manhattan Hotel', 'Hotel', 10, NULL),
+(4, 'Tokyo Guesthouse Asakusa', 'Guesthouse', 5, NULL),
+(5, 'Hotel Arts Barcelona', 'Hotel', 6, NULL),
+(6, 'The Savoy', 'Hotel', 3, NULL),
+(7, 'Sydney Harbour Lodge', 'Lodge', 8, NULL),
+(8, 'Hotel Bella Roma', 'Hotel', 4, NULL);
 
 -- --------------------------------------------------------
 
@@ -146,6 +144,20 @@ CREATE TABLE `trips` (
   `locationid` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `trips`
+--
+
+INSERT INTO `trips` (`tripid`, `maxpersons`, `price`, `startdate`, `duration`, `description`, `flightid`, `accommodationid`, `locationid`) VALUES
+(1, 4, 1299.99, '2026-07-10 08:00:00', 7, 'Zomervakantie in Amsterdam', NULL, 1, 1),
+(2, 2, 899.5, '2026-08-15 10:30:00', 5, 'Romantische stedentrip naar Parijs', 1, 2, 2),
+(3, 10, 2150, '2026-09-01 06:45:00', 14, 'Avontuurlijke reis naar New York', 2, 3, 3),
+(4, 5, 3200.75, '2026-10-05 09:15:00', 21, 'Culturele reis door Tokyo', 3, 4, 4),
+(5, 6, 750, '2026-11-12 07:00:00', 10, 'Citytrip naar Barcelona', 4, 5, 5),
+(6, 3, 1100, '2026-12-24 15:00:00', 7, 'Kerstvakantie in Londen', 5, 6, 6),
+(7, 8, 1850, '2027-01-08 11:00:00', 12, 'Zomervakantie in Sydney', 6, 7, 7),
+(8, 4, 990, '2027-02-14 09:00:00', 6, 'Romantische valentijnsreis naar Rome', 7, 8, 8);
+
 -- --------------------------------------------------------
 
 --
@@ -202,7 +214,8 @@ ALTER TABLE `reviews`
 ALTER TABLE `trips`
   ADD PRIMARY KEY (`tripid`),
   ADD KEY `fk_users_accommodation` (`accommodationid`),
-  ADD KEY `fk_trips_locations` (`locationid`);
+  ADD KEY `fk_trips_locations` (`locationid`),
+  ADD KEY `fk_trips_flights` (`flightid`);
 
 --
 -- Indexen voor tabel `users`
@@ -248,7 +261,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT voor een tabel `trips`
 --
 ALTER TABLE `trips`
-  MODIFY `tripid` int NOT NULL AUTO_INCREMENT;
+  MODIFY `tripid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`
@@ -277,9 +290,9 @@ ALTER TABLE `reviews`
 -- Beperkingen voor tabel `trips`
 --
 ALTER TABLE `trips`
-  ADD CONSTRAINT `fk_trips_locations` FOREIGN KEY (`locationid`) REFERENCES `locations` (`locationid`),
+  ADD CONSTRAINT `fk_trips_accommodations` FOREIGN KEY (`accommodationid`) REFERENCES `accommodations` (`accommodationid`),
   ADD CONSTRAINT `fk_trips_flights` FOREIGN KEY (`flightid`) REFERENCES `flights` (`flightid`),
-  ADD CONSTRAINT `fk_trips_accommodations` FOREIGN KEY (`accommodationid`) REFERENCES `accommodations` (`accommodationid`);
+  ADD CONSTRAINT `fk_trips_locations` FOREIGN KEY (`locationid`) REFERENCES `locations` (`locationid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
