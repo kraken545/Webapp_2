@@ -40,6 +40,7 @@ include("dbcalls/locations/read.php");
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/location_green.png" alt="" width="15"> To</div>
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Departure</div>
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Days</div>
+                <div><img src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="18"> People</div>
             </div>
             <form action="" method="post">
            
