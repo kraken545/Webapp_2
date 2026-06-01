@@ -53,6 +53,7 @@ function apply() {
 }
 
 
+
 // ================ days form ================
 // function applyDays() {
 // 	const display = document.getElementById('total-days');
@@ -72,3 +73,20 @@ function apply() {
 // 		totalDays--;
 // 		setForm();
 // 	}
+
+// ================ Carrusel de Reviews ================
+function scrollCarouselLeft() {
+	const carousel = document.getElementById('reviewsCarousel');
+	carousel.scrollBy({
+		left: -600,
+		behavior: 'smooth'
+	});
+}
+
+function scrollCarouselRight() {
+	const carousel = document.getElementById('reviewsCarousel');
+	carousel.scrollBy({
+		left: 600,
+		behavior: 'smooth'
+	});
+}
