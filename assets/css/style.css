@@ -97,7 +97,7 @@ main {
     display: flex;
     flex-direction: row;
     gap: 30px;
-  
+
     background-color: #f4f4f4;
 }
 
@@ -158,10 +158,10 @@ main {
 
 .search-label {
     width: 885px;
-    height: 20px;
+    height: 25px;
     display: flex;
     flex-direction: row;
-    gap: 93px;
+    gap: 100px;
 
 
 
@@ -174,23 +174,26 @@ main {
     flex-direction: column;
     justify-content: center;
     border-radius: 18px;
-    background: #ffffff;
+    background: #ddfff7;
     width: 100%;
+    border: none;
     height: 70px;
     padding: 10px;
     color: black;
     gap: 8px;
+    box-shadow: #969595 0px 4px 12px -2px;
 }
-.days-field{
+
+.days-field {
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 5px;
     align-items: center;
-    
+
     width: 40%;
     height: 40px;
-   align-self: center;
+    align-self: center;
     color: black;
     padding: 10px;
 
@@ -200,8 +203,8 @@ main {
 
 search-field:hover,
 .search-button:hover {
-    background-color: #a7dbce;
-    box-shadow: #a8e7d7de 0px 4px 12px -2px;
+    background-color: #f1a30882;
+    box-shadow: #f1a208 0px 4px 12px -2px;
 }
 
 .travellers-field {
@@ -324,8 +327,9 @@ search-field:hover,
     flex-direction: row;
     font-weight: 700;
     cursor: pointer;
+    color: #ffffff;
     border: 1px solid rgba(128, 128, 128, 0.126);
-    background-color: #ddfff7;
+    background-color: #d68a00;
     box-shadow: #969595 0px 4px 12px -2px;
 }
 
@@ -336,9 +340,84 @@ search-field:hover,
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
+    padding: 40px 20px;
+}
 
+.testimonial-title {
+    font-size: 2rem;
+    color: #1d1d1d;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* Controles del carrusel */
+.carousel-controls {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Botones de flechas */
+.carousel-btn {
+    background: #f1a208;
+    border: none;
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+.carousel-btn:hover {
+    background: #d98a0a;
+    transform: scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+.reviews-carousel {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    scrollbar-color: transparent transparent;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    justify-content: space-around;
+}
+
+
+
+.review-card {
+    flex: 0 0 100%;
+    max-width: 380px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 5px 10px 0 rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .testimonial-card {
@@ -565,7 +644,7 @@ search-field:hover,
     color: #ffffff;
     padding: 20px;
     border-radius: 15px;
-   
+
     text-align: center;
 }
 
@@ -582,7 +661,7 @@ search-field:hover,
     display: flex;
     width: 50%;
     gap: 20px;
-    
+
 }
 
 .admin-card {
@@ -593,7 +672,7 @@ search-field:hover,
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     border-left: 4px solid #f1a208;
     text-align: center;
-   
+
 }
 
 .admin-card h3 {
@@ -684,7 +763,6 @@ search-field:hover,
     flex-direction: column;
     gap: 25px;
     width: min(1000px, 100%);
-
     color: #3f4a55;
 }
 
@@ -778,6 +856,8 @@ search-field:hover,
     color: #f1a208;
     text-decoration: none;
 }
+
+
 
 /* Info Grid - Top Margin */
 .info-grid-top-margin {
@@ -904,7 +984,7 @@ search-field:hover,
     flex-direction: column;
     gap: 30px;
     width: 30%;
-    height: auto;
+    height: 120vh;
     align-items: center;
 
 }
