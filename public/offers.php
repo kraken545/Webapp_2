@@ -109,7 +109,7 @@ $locations = $result;
       </section>
       <section class="offers-card-section">
         <?php if (!empty($offers)) : ?>
-          <?php foreach ($offers as $offer)  :?>
+          <?php foreach ($offers as $offer) { ?>
             <div class="offer-section">
               <div>
                 <?php
@@ -153,7 +153,7 @@ $locations = $result;
                 <button type="button">Bekijk Vakantie</button>
               </div>
             </div>
-          <?php endforeach; ?>
+          <?php } ?>
         <?php else : ?>
           <p>No offers found.</p>
         <?php endif; ?>
