@@ -13,7 +13,7 @@
                 <div class="logo"><img src="../assets/img/Logo.png" alt="Voyage" ></div>
             </a>
             <nav>
-                <a href="../public/accommodation.php">Offers</a>
+                <a href="../public/offers.php">Offers</a>
                 <a href="../public/about.php">About Us</a>
                 <a href="../public/contact.php">Contact</a>
             </nav>
@@ -74,16 +74,19 @@
         </div>
     </main>
 
-    <footer>
+ <footer>
         <div class="footer-bar">
             <nav>
-                <a href="../public/contact.php">Contact</a>
-                <a href="../public/privacy.php">Privacy Policy</a>
+                <a href="./public/contact.php">Contact</a>
+                <a href="./public/privacy.php">Privacy Policy</a>
             </nav>
             <div class="footer-socials">
-                <img src="../assets/img/social_icon_dark/facebook (1).png" alt="Facebook" width="24" height="25">
-                <img src="../assets/img/social_icon_dark/instagram.png" alt="Instagram" width="24" height="24">
-                <img src="../assets/img/social_icon_dark/twitter.png" alt="Twitter" width="24" height="23">
+                <a href="https://www.facebook.com/" target="_blank"><img
+                        src="../assets/img/social_icon_dark/facebook (1).png" alt="Facebook" width="24" height="25"></a>
+                <a href="http://instagram.com/" target="_blank"><img src="../assets/img/social_icon_dark/instagram.png"
+                        alt="Instagram" width="24" height="24"></a>
+                <a href="http://x.com/" target="_blank"><img src="../assets/img/social_icon_dark/twitter.png" alt="Twitter"
+                        width="24" height="23"></a>
             </div>
         </div>
     </footer>
