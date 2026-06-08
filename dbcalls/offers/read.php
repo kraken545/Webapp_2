@@ -7,7 +7,9 @@ $location = '';
 $accommodationType = '';
 
 if (isset($_GET['people'])) {
-    $people = $_GET['people'];
+    if ($_GET['people'] != '') {
+        $people = (int) $_GET['people'];
+    }
 }
 
 if (isset($_GET['departure-date'])) {
@@ -15,7 +17,9 @@ if (isset($_GET['departure-date'])) {
 }
 
 if (isset($_GET['days'])) {
-    $days = $_GET['days'];
+    if ($_GET['days'] != '') {
+        $days = (int) $_GET['days'];
+    }
 }
 
 if (isset($_GET['from']) && $_GET['from'] != '') {
@@ -46,27 +50,27 @@ INNER JOIN locations l ON t.locationid = l.locationid
 
 WHERE t.maxpersons >= :people";
 
-if ($departureDate !== '') {
-    $sql .= "\n\nAND DATE(t.startdate) = :departureDate";
+if ($departureDate != '') {
+    $sql .= " AND DATE(t.startdate) >= :departureDate";
 }
 
-if ($days !== '') {
-    $sql .= "\n\nAND t.duration = :days";
+if ($days != '') {
+    $sql .= " AND t.duration = :days";
 }
 
-if ($location !== '') {
-    $sql .= "\n\nAND l.locationid = :location";
+if ($location != '') {
+    $sql .= " AND l.locationid = :location";
 }
 
-if ($accommodationType !== '') {
-    $sql .= "\n\nAND a.type = :accommodationType";
+if ($accommodationType != '') {
+    $sql .= " AND a.type = :accommodationType";
 }
 
 $stmt = $conn->prepare($sql);
 
 $stmt->bindParam(':people', $people);
 
-if ($departureDate !== '') {
+if ($departureDate != '') {
     $stmt->bindParam(':departureDate', $departureDate);
 }
 
