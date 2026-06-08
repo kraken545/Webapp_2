@@ -61,7 +61,7 @@ $accommodations = $result;
               <div class="choose-balk"><strong>Destination</strong></div>
             </option>
             <?php foreach ($locations as $locaties) { ?>
-              <option >
+              <option value="<?php echo $locaties['locationid'] ?>">
                 <?php echo $locaties['country']; ?>
               </option>
             <?php } ?>

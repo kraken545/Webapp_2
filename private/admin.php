@@ -102,7 +102,7 @@ $edit_trip_data = null;
           <section class="side-admin-info-change">
             <div class="admin-section">
               <h3>Add New Location</h3>
-              <form method="POST" action="../dbcalls/locations/location_create.php" class="admin-form">
+              <form method="POST" action="../dbcalls/locations/create_location.php" class="admin-form">
                 <div class="admin-form-row">
                   <div class="admin-form-group">
                     <label for="city">City</label>
@@ -397,26 +397,26 @@ $edit_trip_data = null;
                 <tr>
                   
                   <th>ID</th>
-                  <th>Departure</th>
-                  <th>Destination</th> 
+                  <th>City</th>
+                  <th>Country</th> 
                   <th>  </th>
                 </tr>
               </thead>
               <tbody>
                
-                  <?php foreach ($destinations as $destination){ ?>
+                  <?php foreach ($locations as $destination){ ?>
                     <tr>
                       
-                      <td><?php echo ($destination['destinationid']); ?></td>
+                      <td><?php echo ($destination['locationid']); ?></td>
                       <td>
-                        <span class="status-badge"><?php echo ($destination['destination']); ?></span>
+                        <span class="status-badge"><?php echo ($destination['city']); ?></span>
                       </td>
                       <td>
-                        <span class="status-badge"><?php echo ($destination['destination']); ?></span>
+                        <span class="status-badge"><?php echo ($destination['country']); ?></span>
                       </td>
                       <td>
                         <form method="POST" action="../dbcalls/destinations/destinations_delete.php" onsubmit="return confirm('Are you sure you want to delete this destination?')" style="display:inline">
-                          <input type="hidden" name="delete_destinationid" value="<?php echo $destination['destinationid']; ?>">
+                          <input type="hidden" name="delete_locationid" value="<?php echo $destination['locationid']; ?>">
                           <button type="submit" class="action-button delete">Delete</button>
                         </form>
                       </td>
