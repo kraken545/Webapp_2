@@ -1,6 +1,13 @@
 <?php
+session_start();
 include("dbcalls/conn.php");
 include("dbcalls/locations/read.php");
+
+// Fetch reviews
+$sql_reviews = "SELECT * FROM reviews ORDER BY reviewid DESC LIMIT 10";
+$stmt_reviews = $conn->prepare($sql_reviews);
+$stmt_reviews->execute();
+$all_reviews = $stmt_reviews->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +31,11 @@ include("dbcalls/locations/read.php");
                 <a href="./public/contact.php">Contact</a>
             </nav>
 
-            <div class="nav-account"><a href="./private/login.php" class="nav-account-link">My Account</a></div>
+            <?php if(isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] == true ){ ?>
+                <div class="nav-account"><a href="./private/admin.php" class="nav-account-link">Admin</a></div>
+            <?php } else { ?>
+                <div class="nav-account"><a href="./private/login.php" class="nav-account-link">My Account</a></div>
+            <?php }; ?>
         </div>
     </header>
 
@@ -48,7 +59,7 @@ include("dbcalls/locations/read.php");
                     <option value="0">
                         <div class="choose-balk"><strong>Destination</strong></div>
                     </option>
-                    <?php foreach ($result as $locaties) { ?>
+                    <?php foreach ($locations as $locaties) { ?>
                         <option value="<?php echo $locaties['locationid'] ?>">
                             <?php echo $locaties['country']; ?>
                         </option>
@@ -75,71 +86,19 @@ include("dbcalls/locations/read.php");
             <div class="carousel-controls">
                 <button type="button" class="carousel-btn carousel-btn-left" onclick="scrollCarouselLeft()">‹</button>
                 <div class="reviews-carousel" id="reviewsCarousel">
-                <div class="review-card">
-                    <p class="quote">Everything was easy to find and clearly presented, including the extra options.</p>
-                    <p class="review-author">— Paul V</p>
-                    <div class="testimonial-meta">
-                        <span class="truststars">★★★★★</span>
-                        <span>Verified</span>
+                <?php foreach ($all_reviews as $rev) { ?>
+                    <div class="review-card">
+                        <p class="quote"><?php echo ($rev['review']); ?></p>
+                        <span>  </span>
+                        <p class="review-author">— <?php echo ($rev['name']); ?></p>
+                        <span>  </span>
+                        <div class="testimonial-meta">
+                            <span>  </span>
+                            <span class="truststars">★★★★★</span>
+                            <span>Verified</span>
+                        </div>
                     </div>
-                </div>
-                <div class="review-card">
-                    <p class="quote">Amazing experience from booking to landing. Highly recommended!</p>
-                    <p class="review-author">— Sarah M</p>
-                    <div class="testimonial-meta">
-                        <span class="truststars">★★★★★</span>
-                        <span>Verified</span>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <p class="quote">Best travel agency I've ever used. Great prices and support.</p>
-                    <p class="review-author">— John D</p>
-                    <div class="testimonial-meta">
-                        <span class="truststars">★★★★★</span>
-                        <span>Verified</span>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <p class="quote">Best travel agency I've ever used. Great prices and support.</p>
-                    <p class="review-author">— John D</p>
-                    <div class="testimonial-meta">
-                        <span class="truststars">★★★★★</span>
-                        <span>Verified</span>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <p class="quote">Best travel agency I've ever used. Great prices and support.</p>
-                    <p class="review-author">— John D</p>
-                    <div class="testimonial-meta">
-                        <span class="truststars">★★★★★</span>
-                        <span>Verified</span>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <p class="quote">Best travel agency I've ever used. Great prices and support.</p>
-                    <p class="review-author">— John D</p>
-                    <div class="testimonial-meta">
-                        <span class="truststars">★★★★★</span>
-                        <span>Verified</span>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <p class="quote">Best travel agency I've ever used. Great prices and support.</p>
-                    <p class="review-author">— John D</p>
-                    <div class="testimonial-meta">
-                        <span class="truststars">★★★★★</span>
-                        <span>Verified</span>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <p class="quote">Best travel agency I've ever used. Great prices and support.</p>
-                    <p class="review-author">— John D</p>
-                    <div class="testimonial-meta">
-                        <span class="truststars">★★★★★</span>
-                        <span>Verified</span>
-                    </div>
-                </div>
+                    <?php } ?>
                 </div>
                 <button type="button" class="carousel-btn carousel-btn-right" onclick="scrollCarouselRight()">›</button>
         </section>

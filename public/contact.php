@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,11 +26,11 @@
     <main>
         <section class="page-section">
             <h1 class="page-title">Contact Us</h1>
-            <p class="page-subtitle">Have questions? We're here to help. Get in touch with our team.</p>
+            <p class="page-subtitle">Have questions or want to leave a review? We're here to help.</p>
         </section>
 
         <div class="form-container">
-            <form method="POST" action="">
+            <form method="POST" action="../dbcalls/user/review_create.php">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" required>
@@ -46,11 +47,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Message</label>
+                    <label for="message">Review</label>
                     <textarea id="message" name="message" required></textarea>
                 </div>
 
-                <button type="submit" class="form-button">Send Message</button>
+                <button type="submit" name="submit_contact" class="form-button">Send Message</button>
             </form>
         </div>
 
@@ -61,7 +62,7 @@
             </div>
             <div class="info-card">
                 <h3>Phone</h3>
-                <p>+31 (0) 24 XXX XX XX</p>
+                <p>+31 (0) 24 457 4676</p>
             </div>
             <div class="info-card">
                 <h3>Address</h3>

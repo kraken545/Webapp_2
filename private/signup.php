@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +34,7 @@
         </section>
 
         <div class="form-container">
-            <form method="POST" action="">
+            <form method="POST" action="../dbcalls/user/signup_handler.php">
                 <div class="form-group">
                     <label for="firstname">First Name</label>
                     <input type="text" id="firstname" name="firstname" required>
@@ -77,8 +82,8 @@
  <footer>
         <div class="footer-bar">
             <nav>
-                <a href="./public/contact.php">Contact</a>
-                <a href="./public/privacy.php">Privacy Policy</a>
+                <a href="../public/contact.php">Contact</a>
+                <a href="../public/privacy.php">Privacy Policy</a>
             </nav>
             <div class="footer-socials">
                 <a href="https://www.facebook.com/" target="_blank"><img
