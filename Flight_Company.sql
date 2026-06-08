@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Gegenereerd op: 01 jun 2026 om 13:47
--- Serverversie: 8.4.8
--- PHP-versie: 8.3.30
+-- Generation Time: Jun 08, 2026 at 01:03 PM
+-- Server version: 8.4.8
+-- PHP Version: 8.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `accommodations`
+-- Table structure for table `accommodations`
 --
 
 CREATE TABLE `accommodations` (
@@ -36,7 +36,7 @@ CREATE TABLE `accommodations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `accommodations`
+-- Dumping data for table `accommodations`
 --
 
 INSERT INTO `accommodations` (`accommodationid`, `name`, `type`, `peopleamount`, `image`) VALUES
@@ -47,12 +47,32 @@ INSERT INTO `accommodations` (`accommodationid`, `name`, `type`, `peopleamount`,
 (5, 'Hotel Arts Barcelona', 'Hotel', 6, NULL),
 (6, 'The Savoy', 'Hotel', 3, NULL),
 (7, 'Sydney Harbour Lodge', 'Lodge', 8, NULL),
-(8, 'Hotel Bella Roma', 'Hotel', 4, NULL);
+(8, 'Hotel Bella Roma', 'Hotel', 4, NULL),
+(24, 'Tropicana', 'Hostel', 2, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `flights`
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `adminid` int NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`adminid`, `username`, `password`) VALUES
+(1, 'admin', '$2y$10$P7Y90UVGUtEfuPtgcOUQne2CPylMZBArkvhGaZ34nfa9Wtrdyo8/6');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `flights`
 --
 
 CREATE TABLE `flights` (
@@ -62,7 +82,7 @@ CREATE TABLE `flights` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `flights`
+-- Dumping data for table `flights`
 --
 
 INSERT INTO `flights` (`flightid`, `departure`, `destination`) VALUES
@@ -72,12 +92,16 @@ INSERT INTO `flights` (`flightid`, `departure`, `destination`) VALUES
 (4, 'Amsterdam', 'Barcelona'),
 (5, 'Amsterdam', 'Londen'),
 (6, 'Amsterdam', 'Sydney'),
-(7, 'Amsterdam', 'Rome');
+(7, 'Amsterdam', 'Rome'),
+(8, 'Amsterdam', 'Argentina'),
+(9, 'Amsterdam', 'Colombia'),
+(11, 'Amsterdam', 'Venezuela'),
+(12, 'Amsterdam', 'Argentina');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `locations`
+-- Table structure for table `locations`
 --
 
 CREATE TABLE `locations` (
@@ -87,7 +111,7 @@ CREATE TABLE `locations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `locations`
+-- Dumping data for table `locations`
 --
 
 INSERT INTO `locations` (`locationid`, `city`, `country`) VALUES
@@ -98,38 +122,62 @@ INSERT INTO `locations` (`locationid`, `city`, `country`) VALUES
 (5, 'Barcelona', 'Spanje'),
 (6, 'Londen', 'Verenigd Koninkrijk'),
 (7, 'Sydney', 'Australië'),
-(8, 'Rome', 'Italië');
+(8, 'Rome', 'Italië'),
+(9, 'Buenos aires', 'Argentina'),
+(10, 'Venezuela', 'Caracas'),
+(12, 'Colombia', 'Bogota'),
+(13, 'Santo Domingo', 'Dominicaanse Republic');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
   `orderid` int NOT NULL,
   `orderdate` datetime NOT NULL,
   `Sum` double NOT NULL,
-  `userid` int DEFAULT NULL,
+  `quantity` int NOT NULL DEFAULT '1',
+  `userid` varchar(50) DEFAULT NULL,
   `tripid` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `reviews`
+-- Table structure for table `reviews`
 --
 
 CREATE TABLE `reviews` (
   `reviewid` int NOT NULL,
-  `review` text NOT NULL,
-  `userid` int NOT NULL
+  `userid` varchar(50) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `review` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`reviewid`, `userid`, `name`, `email`, `subject`, `review`) VALUES
+(1, NULL, 'Alice Johnson', 'alice@example.com', 'Amazing Trip!', 'The trip to Paris was absolutely wonderful. The hotel was great and the flight was smooth.'),
+(2, NULL, 'Bob Smith', 'bob@example.com', 'Good service', 'Very good customer service. The booking process was simple and fast. Will definitely use again.'),
+(3, NULL, 'Charlie Davis', 'charlie@example.com', 'Unforgettable experience', 'Tokyo is a beautiful city. Thank you Voyage for organizing such an unforgettable experience!'),
+(4, NULL, 'Alice Johnson', 'alice@example.com', 'Amazing Trip!', 'The trip to Paris was absolutely wonderful. The hotel was great and the flight was smooth.'),
+(5, NULL, 'Bob Smith', 'bob@example.com', 'Good service', 'Very good customer service. The booking process was simple and fast. Will definitely use again.'),
+(6, NULL, 'Charlie Davis', 'charlie@example.com', 'Unforgettable experience', 'Tokyo is a beautiful city. Thank you Voyage for organizing such an unforgettable experience!'),
+(7, NULL, 'test', 'test@gmail.com', 'test', 'test van de testen om te kijken als de test is getest om niet later t gaan testen wat al getest is. moraleja van de tester: test nooit iets wat je niet wil testen anders word je getest door de testements'),
+(8, NULL, 'test', 'test@gmail.com', 'test', 'fd badg d '),
+(9, NULL, 'testadfvadfv', 'testzvfdsv@gmail.com', 'testadaf', 'adfbgbsdbadbadadfvhvblakrbv vnka,v .fkvjfbvkf vfvbvuvbivukef vuefv vhevliufvh ee;fveufvhfv;q eufve fvfovuvqev;o vq;vofuqh;vlkquevjhleoivu\r\n'),
+(10, NULL, 'test', 'test@gmail.com', 'test', 'rerrvervqerrvwqerfv');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `trips`
+-- Table structure for table `trips`
 --
 
 CREATE TABLE `trips` (
@@ -145,7 +193,7 @@ CREATE TABLE `trips` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `trips`
+-- Dumping data for table `trips`
 --
 
 INSERT INTO `trips` (`tripid`, `maxpersons`, `price`, `startdate`, `duration`, `description`, `flightid`, `accommodationid`, `locationid`) VALUES
@@ -156,45 +204,56 @@ INSERT INTO `trips` (`tripid`, `maxpersons`, `price`, `startdate`, `duration`, `
 (5, 6, 750, '2026-11-12 07:00:00', 10, 'Citytrip naar Barcelona', 4, 5, 5),
 (6, 3, 1100, '2026-12-24 15:00:00', 7, 'Kerstvakantie in Londen', 5, 6, 6),
 (7, 8, 1850, '2027-01-08 11:00:00', 12, 'Zomervakantie in Sydney', 6, 7, 7),
-(8, 4, 990, '2027-02-14 09:00:00', 6, 'Romantische valentijnsreis naar Rome', 7, 8, 8);
+(8, 4, 990, '2027-02-14 09:00:00', 6, 'Romantische valentijnsreis naar Rome', 7, 8, 8),
+(20, 2, 700, '2026-06-26 17:52:00', 2, 'test', NULL, 1, 1),
+(21, 3, 600, '2026-07-03 19:38:00', 3, 'test', 11, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `userid` int NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `userid` varchar(50) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
-  `role` varchar(255) NOT NULL
+  `role` varchar(50) DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Indexen voor geëxporteerde tabellen
+-- Indexes for dumped tables
 --
 
 --
--- Indexen voor tabel `accommodations`
+-- Indexes for table `accommodations`
 --
 ALTER TABLE `accommodations`
   ADD PRIMARY KEY (`accommodationid`);
 
 --
--- Indexen voor tabel `flights`
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`adminid`);
+
+--
+-- Indexes for table `flights`
 --
 ALTER TABLE `flights`
   ADD PRIMARY KEY (`flightid`);
 
 --
--- Indexen voor tabel `locations`
+-- Indexes for table `locations`
 --
 ALTER TABLE `locations`
   ADD PRIMARY KEY (`locationid`);
 
 --
--- Indexen voor tabel `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`orderid`),
@@ -202,14 +261,14 @@ ALTER TABLE `orders`
   ADD KEY `fk_orders_trip` (`tripid`);
 
 --
--- Indexen voor tabel `reviews`
+-- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
   ADD PRIMARY KEY (`reviewid`),
   ADD KEY `fk_reviews_user` (`userid`);
 
 --
--- Indexen voor tabel `trips`
+-- Indexes for table `trips`
 --
 ALTER TABLE `trips`
   ADD PRIMARY KEY (`tripid`),
@@ -218,81 +277,82 @@ ALTER TABLE `trips`
   ADD KEY `fk_trips_flights` (`flightid`);
 
 --
--- Indexen voor tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`userid`);
+  ADD PRIMARY KEY (`userid`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT voor geëxporteerde tabellen
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT voor een tabel `accommodations`
+-- AUTO_INCREMENT for table `accommodations`
 --
 ALTER TABLE `accommodations`
-  MODIFY `accommodationid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `accommodationid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT voor een tabel `flights`
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `adminid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `flights`
 --
 ALTER TABLE `flights`
-  MODIFY `flightid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `flightid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT voor een tabel `locations`
+-- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
-  MODIFY `locationid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `locationid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT voor een tabel `orders`
+-- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `orderid` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT voor een tabel `reviews`
+-- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `reviewid` int NOT NULL AUTO_INCREMENT;
+  MODIFY `reviewid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT voor een tabel `trips`
+-- AUTO_INCREMENT for table `trips`
 --
 ALTER TABLE `trips`
-  MODIFY `tripid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `tripid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT voor een tabel `users`
---
-ALTER TABLE `users`
-  MODIFY `userid` int NOT NULL AUTO_INCREMENT;
-
---
--- Beperkingen voor geëxporteerde tabellen
+-- Constraints for dumped tables
 --
 
 --
--- Beperkingen voor tabel `orders`
+-- Constraints for table `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `fk_orders_trips` FOREIGN KEY (`tripid`) REFERENCES `trips` (`tripid`),
-  ADD CONSTRAINT `fk_orders_users` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`);
+  ADD CONSTRAINT `fk_orders_trips` FOREIGN KEY (`tripid`) REFERENCES `trips` (`tripid`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_orders_users` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`) ON DELETE SET NULL;
 
 --
--- Beperkingen voor tabel `reviews`
+-- Constraints for table `reviews`
 --
 ALTER TABLE `reviews`
-  ADD CONSTRAINT `fk_reviews_users` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`);
+  ADD CONSTRAINT `fk_reviews_users` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`) ON DELETE SET NULL;
 
 --
--- Beperkingen voor tabel `trips`
+-- Constraints for table `trips`
 --
 ALTER TABLE `trips`
-  ADD CONSTRAINT `fk_trips_accommodations` FOREIGN KEY (`accommodationid`) REFERENCES `accommodations` (`accommodationid`),
-  ADD CONSTRAINT `fk_trips_flights` FOREIGN KEY (`flightid`) REFERENCES `flights` (`flightid`),
-  ADD CONSTRAINT `fk_trips_locations` FOREIGN KEY (`locationid`) REFERENCES `locations` (`locationid`);
+  ADD CONSTRAINT `fk_trips_accommodations` FOREIGN KEY (`accommodationid`) REFERENCES `accommodations` (`accommodationid`) ON DELETE RESTRICT,
+  ADD CONSTRAINT `fk_trips_flights` FOREIGN KEY (`flightid`) REFERENCES `flights` (`flightid`) ON DELETE SET NULL,
+  ADD CONSTRAINT `fk_trips_locations` FOREIGN KEY (`locationid`) REFERENCES `locations` (`locationid`) ON DELETE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,6 +1,7 @@
 <?php
+session_start();
 include("../dbcalls/conn.php");
-
+include("../dbcalls/user/users_read.php");
 ?>
 
 <!DOCTYPE html>
@@ -25,35 +26,36 @@ include("../dbcalls/conn.php");
                 <a href="../public/contact.php">Contact</a>
             </nav>
 
-            <div class="nav-account"><a href="./profile.php" class="nav-account-link">My Account</a></div>
+            <div class="nav-account"><a href="../dbcalls/user/user_logout.php" class="nav-account-link">Log Out</a></div>
         </div>
     </header>
 
     <main>
+
         <section class="page-section">
-            <h1 class="page-title">My Profile</h1>
+            <h1 class="page-title">Hi <?php echo ($_SESSION['user_firstname']); ?> </h1>
             <p class="page-subtitle">Manage your account information</p>
         </section>
 
         <div class="profile-container">
-            <!-- Información del Usuario -->
+          
             <div class="profile-card">
                 <h2 class="profile-card-title">Personal Information</h2>
                 
                 <div class="profile-info-grid">
                     <div class="profile-info-item">
-                        <label class="profile-label">Full Name</label>
-                        <p class="profile-value">Yoni; ?></p>
+                       <label class="profile-label">Full Name</label>
+                        <p class="profile-value"><?php echo ($_SESSION['user_firstname']); ?>  <?php echo ($_SESSION['user_lastname']); ?></p>
                     </div>
 
                     <div class="profile-info-item">
                         <label class="profile-label">Email</label>
-                        <p class="profile-value">23543@gmail.com</p>
+                        <p class="profile-value"><?php echo $_SESSION['user_email']; ?></p>
                     </div>
 
                     <div class="profile-info-item">
                         <label class="profile-label">Phone</label>
-                        <p class="profile-value">+31 06 85509004 ?></p>
+                        <p class="profile-value"><?php echo $_SESSION['user_phone']; ?></p>
                     </div>
 
                     <div class="profile-info-item">
@@ -61,55 +63,22 @@ include("../dbcalls/conn.php");
                         <p class="profile-value">Nederlands</p>
                     </div>
 
-                    <div class="profile-info-item">
-                        <label class="profile-label">Member Since</label>
-                        <p class="profile-value">01-05-1995</p>
-                    </div>
                 </div>
 
-                <button type="button" class="form-button" onclick="editProfile()">Edit Profile</button>
+               
             </div>
 
-            <!-- Estadísticas de Viajes -->
-            <div class="profile-card">
-                <h2 class="profile-card-title">Travel Statistics</h2>
-                
-                <div class="profile-stats-grid">
-                    <div class="profile-stat">
-                        <p class="stat-number">3</p>
-                        <p class="stat-label">Total Bookings</p>
-                    </div>
-
-                    <div class="profile-stat">
-                        <p class="stat-number">2000</p>
-                        <p class="stat-label">Total Spent</p>
-                    </div>
-                </div>
-            </div>
+         
+          
 
             <!-- Opciones de Cuenta -->
             <div class="profile-card">
                 <h2 class="profile-card-title">Account Settings</h2>
                 
                 <div class="profile-actions">
-                    <button type="button" class="profile-action-btn" onclick="changePassword()">
-                        <span class="action-icon">🔐</span>
-                        Change Password
-                    </button>
-
-                    <button type="button" class="profile-action-btn" onclick="viewBookings()">
-                        <span class="action-icon">✈️</span>
-                        My Bookings
-                    </button>
-
-                    <button type="button" class="profile-action-btn" onclick="viewNotifications()">
-                        <span class="action-icon">🔔</span>
-                        Notifications
-                    </button>
-
-                    <button type="button" class="profile-action-btn logout" onclick="logout()">
-                        <span class="action-icon">🚪</span>
-                        Logout
+                    <button type="submit" class="profile-action-btn">
+                        <span class="action-icon">✏️</span>
+                        <a href="../private/edit_profile.php?$edit_info=true" class="edit-profile-btn">Edit Profile</a>
                     </button>
                 </div>
             </div>
