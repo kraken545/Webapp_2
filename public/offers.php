@@ -46,7 +46,56 @@ $accommodations = $result;
           <div class="travellers-field">
             <button type="button" class="offers-search-cards" id="add-aantal" onclick="openForm()"><img id="people-img"
                 src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="20">Travelers</button>
+  <main class="main-content-offers">
+    <section class="search-section-container">
+      <div class="search-section">
+        <form class="offers-search-form">
+          <div class="travellers-field">
+            <button type="button" class="offers-search-cards" id="add-aantal" onclick="openForm()"><img id="people-img"
+                src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="20">Travelers</button>
 
+            <div class="form-popup" id="myForm" aria-hidden="true">
+              <div class="form-container small">
+                <label><b>Number of Adults: </b></label>
+                <div class="counter-controls">
+                  <button type="button" id="decrement-people" onclick="decrement()" class="counter-btn">−</button>
+                  <span id="total-people">1</span>
+                  <button type="button" id="increment-people" onclick="increment()" class="counter-btn">+</button>
+
+                </div>
+
+                <div class="form-actions">
+                  <button type="button" onclick="apply()" class="btn-apply">Apply</button>
+                  <button type="button" onclick="closeForm()" class="btn-close">Close</button>
+                </div>
+              </div>
+            </div>
+            <!-- // =========== als de user op apply clickt word de data bewaard en de form gaat dicht  ========= -->
+            <input type="hidden" name="people" id="total-people-input" value="1">
+          </div>
+          <div class="offers-search-cards">
+            <div>Departure Date</div>
+            <input type="date" name="departure-date" />
+          </div>
+          <div class="offers-search-cards-date-departure">
+            <div class="search-label-date">
+              <div>Amount of days</div>
+            </div>
+            <div class="search-label-date">
+              <input type="number" name="days" min="1" placeholder="Number of days" />
+            </div>
+          </div>
+          <select class="offers-search-cards" name="from" id="" placeholder="Destination">
+            <option value="0">
+              <div class="choose-balk"><strong>Destination</strong></div>
+            </option>
+            <?php foreach ($locations as $locaties) { ?>
+              <option value="<?php echo $locaties['locationid'] ?>">
+                <?php echo $locaties['country']; ?>
+              </option>
+            <?php } ?>
+
+          </select>
             <div class="form-popup" id="myForm" aria-hidden="true">
               <div class="form-container small">
                 <label><b>Number of Adults: </b></label>
