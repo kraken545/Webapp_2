@@ -59,9 +59,7 @@ $accommodations = $result;
           <select class="offers-search-cards" name="from" id="" placeholder="Destination">
             <option value="" selected disabled hidden>Destination</option>
             <?php foreach ($locations as $locaties) { ?>
-              <option >
-                <?php echo $locaties['country']; ?>
-              </option>
+              <option value="<?php echo $locaties['locationid']; ?>"><?php echo $locaties['country']; ?></option>
             <?php } ?>
 
           </select>

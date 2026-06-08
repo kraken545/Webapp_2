@@ -89,7 +89,3 @@ if ($accommodationType !== '') {
 $stmt->execute();
 
 $result = $stmt->fetchAll();
-
-
-
-
