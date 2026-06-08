@@ -42,7 +42,7 @@ $accommodations = $result;
   <main class="main-content-offers">
     <section class="search-section-container">
       <div class="search-section">
-        <form class="offers-search-form">
+        <form class="offers-search-form" action="offers.php" method="get">
           <div class="travellers-field">
   
            
@@ -57,9 +57,7 @@ $accommodations = $result;
               <input type="number" class="offers-search-cards" name="days" min="1" placeholder="Number of days" />
          
           <select class="offers-search-cards" name="from" id="" placeholder="Destination">
-            <option value="0">
-              <div class="choose-balk"><strong>Destination</strong></div>
-            </option>
+            <option value="" selected disabled hidden>Destination</option>
             <?php foreach ($locations as $locaties) { ?>
               <option value="<?php echo $locaties['locationid'] ?>">
                 <?php echo $locaties['country']; ?>
@@ -68,9 +66,7 @@ $accommodations = $result;
 
           </select>
           <select class="offers-search-cards" name="accommodation-type" id="" placeholder="Accommodation Type">
-            <option value="0">
-              <div class="choose-balk"><strong>Accommodation Type</strong></div>
-            </option>
+            <option value="" selected disabled hidden>Accommodation Type</option>
             <?php
             $seenTypes = [];
             foreach ($accommodations as $accommodation) {
