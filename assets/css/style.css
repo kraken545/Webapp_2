@@ -527,7 +527,7 @@ search-field:hover,
 /* Content Section */
 .page-section {
     width: min(900px, 100%);
-    margin: 30px 0;
+   
 }
 
 .page-title {
@@ -604,6 +604,7 @@ search-field:hover,
     background: #ffffff;
     border-radius: 20px;
     padding: 40px;
+    margin-bottom: 40px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
