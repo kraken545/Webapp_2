@@ -1,3 +1,14 @@
+<?php
+session_start();
+if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true) {
+    header('Location: profile.php');
+    exit;
+}
+if(isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] == true) {
+    header('Location: admin.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +28,8 @@
                 <a href="../public/about.php">About Us</a>
                 <a href="../public/contact.php">Contact</a>
             </nav>
-           
-            <div class="nav-account"><a href="./admin.php" class="nav-account-link"> Admin</a></div>
-        </div>
+           <a></a>
+          
     </header>
 
     <main>
@@ -29,10 +39,10 @@
         </section>
 
         <div class="form-container">
-            <form method="POST" action="">
+            <form method="POST" action="../dbcalls/logs/login_handler.php">
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="username">Email</label>
+                    <input type="text" id="username" name="username" required>
                 </div>
 
                 <div class="form-group">
@@ -58,8 +68,8 @@
   <footer>
         <div class="footer-bar">
             <nav>
-                <a href="./public/contact.php">Contact</a>
-                <a href="./public/privacy.php">Privacy Policy</a>
+                <a href="../public/contact.php">Contact</a>
+                <a href="../public/privacy.php">Privacy Policy</a>
             </nav>
             <div class="footer-socials">
                 <a href="https://www.facebook.com/" target="_blank"><img

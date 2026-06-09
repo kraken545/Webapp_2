@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../dbcalls/conn.php");
 include("../dbcalls/offers/read.php");
 $offers = $result;
@@ -29,7 +30,11 @@ $accommodations = $result;
         <a href="./contact.php">Contact</a>
       </nav>
 
-      <div class="nav-account"><a href="../private/login.php" class="nav-account-link">My Account</a></div>
+      <?php if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] == true) { ?>
+        <div class="nav-account"><a href="../private/admin.php" class="nav-account-link">Admin</a></div>
+      <?php } else { ?>
+        <div class="nav-account"><a href="../private/login.php" class="nav-account-link">My Account</a></div>
+      <?php } ?>
     </div>
     </div>
   </header>
@@ -39,40 +44,18 @@ $accommodations = $result;
       <div class="search-section">
         <form class="offers-search-form" action="offers.php" method="get">
           <div class="travellers-field">
-            <button type="button" class="offers-search-cards" id="add-aantal" onclick="openForm()"><img id="people-img"
-                src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="20">Travelers</button>
-
-            <div class="form-popup" id="myForm" aria-hidden="true">
-              <div class="form-container small">
-                <label><b>Number of Adults: </b></label>
-                <div class="counter-controls">
-                  <button type="button" id="decrement-people" onclick="decrement()" class="counter-btn">−</button>
-                  <span id="total-people">1</span>
-                  <button type="button" id="increment-people" onclick="increment()" class="counter-btn">+</button>
-
-                </div>
-
-                <div class="form-actions">
-                  <button type="button" onclick="apply()" class="btn-apply">Apply</button>
-                  <button type="button" onclick="closeForm()" class="btn-close">Close</button>
-                </div>
-              </div>
-            </div>
-            <!-- // =========== als de user op apply clickt word de data bewaard en de form gaat dicht  ========= -->
-            <input type="hidden" name="people" id="total-people-input" value="1">
+  
+           
+            
+                   <input type="number" class="offers-search-cards" name="people" id="total-people-input" min="1" max="10" value="1">
           </div>
           <div class="offers-search-cards">
             <div>Departure Date</div>
             <input type="date" name="departure-date" />
           </div>
-          <div class="offers-search-cards-date-departure">
-            <div class="search-label-date">
-              <div>Amount of days</div>
-            </div>
-            <div class="search-label-date">
-              <input type="number" name="days" min="1" placeholder="Number of days" />
-            </div>
-          </div>
+         
+              <input type="number" class="offers-search-cards" name="days" min="1" placeholder="Number of days" />
+         
           <select class="offers-search-cards" name="from" id="" placeholder="Destination">
             <option value="" selected disabled hidden>Destination</option>
             <?php foreach ($locations as $locaties) { ?>
@@ -97,7 +80,7 @@ $accommodations = $result;
       </div>
     </section>
     <section class="offers-card-section">
-      <?php if (!empty($offers)): ?>
+     
         <?php foreach ($offers as $offer) { ?>
           <div class="offer-section">
             <div>
@@ -107,8 +90,9 @@ $accommodations = $result;
               } else {
                 $imageSrc = '../assets/img/placeholder.png';
               }
-              ?>
-              <img src="<?php echo $imageSrc; ?>" alt="Accommodation image" width="100" height="100" />
+            
+            ?>
+            <img src="<?php echo $imageSrc; ?>" alt="Accommodation image" width="100" height="100" />
             </div>
             <div class="offer-beschrijving">
               <div><?php echo $offer['name']; ?></div>
@@ -140,9 +124,6 @@ $accommodations = $result;
             </div>
           </div>
         <?php } ?>
-      <?php else: ?>
-        <p>No offers found.</p>
-      <?php endif; ?>
     </section>
   </main>
   <footer>

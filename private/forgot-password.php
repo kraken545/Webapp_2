@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,24 +21,31 @@
                 <a href="../public/contact.php">Contact</a>
             </nav>
        
-            <div class="nav-account"><a href="./login.php" class="nav-account-link">My Account</a></div>
+            <a></a>
         </div>
     </header>
 
     <main>
         <section class="page-section">
             <h1 class="page-title">Reset Password</h1>
-            <p class="page-subtitle">Enter your email address and we'll send you a link to reset your password</p>
+            <p class="page-subtitle">Enter your email address and your new password to reset it</p>
         </section>
 
         <div class="form-container">
-            <form method="POST" action="">
+            
+
+            <form method="POST" action="../dbcalls/logs/forgot_password_handler.php">
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" required>
                 </div>
 
-                <button type="submit" class="form-button">Send Reset Link</button>
+                <div class="form-group">
+                    <label for="new_password">New Password</label>
+                    <input type="password" id="new_password" name="new_password" required>
+                </div>
+
+                <button type="submit" class="form-button">Change Password</button>
             </form>
 
             <div class="form-links-container">
@@ -46,10 +56,8 @@
         <section class="text-content text-content-centered">
             <h3>How it works:</h3>
             <p><strong>1. Enter your email:</strong> Provide the email address associated with your Voyage account.</p>
-            <p><strong>2. Check your inbox:</strong> We'll send you an email with a password reset link within a few minutes.</p>
-            <p><strong>3. Reset your password:</strong> Click the link in the email and follow the instructions to create a new password.</p>
-            <p><strong>4. Sign in:</strong> Use your new password to log back into your account.</p>
-            <p class="helper-text">If you don't receive an email, please check your spam folder or contact our support team at info@voyage.nl</p>
+            <p><strong>2. Enter your new password:</strong> Create a strong new password and submit.</p>
+            <p><strong>3. Sign in:</strong> Use your new password to log back into your account.</p>
         </section>
     </main>
 

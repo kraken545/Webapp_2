@@ -1,5 +1,6 @@
 <?php
 
+
 $sql  = "SELECT * FROM locations";
 
 $stmt = $conn->prepare($sql);
