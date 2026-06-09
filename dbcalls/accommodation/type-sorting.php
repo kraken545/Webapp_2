@@ -1,6 +1,6 @@
 <?php
 
-$sql  = "SELECT type FROM accommodations ORDER BY type";
+$sql  = "SELECT DISTINCT type FROM accommodations ORDER BY type";
 
 $stmt = $conn->prepare($sql);
 

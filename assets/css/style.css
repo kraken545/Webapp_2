@@ -1089,18 +1089,19 @@ search-field:hover,
     padding: 10px;
 }
 
-.offer-prijs button {
+
+.view-vacation-link {
     background-color: #f1a208;
-    display: flex;
     color: #ffffff;
-    border: none;
+    text-decoration: none;
     width: 120px;
     height: 40px;
     border-radius: 10px;
     font-weight: 700;
+    display: flex;
     align-items: center;
     justify-content: center;
-
+    text-align: center;
 }
 
 .offers-card-section {
@@ -1193,4 +1194,35 @@ search-field:hover,
 
 
 
+}
+
+/* ---Order Section--- */
+.order-details-section {
+    height: auto;
+    width: min(900px, 100%);
+    padding: 20px;
+}
+
+.order-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.order-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f1a208;
+}
+
+.order-price-label {
+    color: #5d6b7b;
+    font-size: 0.9rem;
+}
+
+.order-form-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #f1a208;
+    padding-bottom: 12px;
 }
