@@ -2,12 +2,13 @@
 session_start();
 include("dbcalls/conn.php");
 include("dbcalls/locations/read.php");
+include("dbcalls/review/review_read.php");
 
-// Fetch reviews
-$sql_reviews = "SELECT * FROM reviews ORDER BY reviewid DESC LIMIT 10";
-$stmt_reviews = $conn->prepare($sql_reviews);
-$stmt_reviews->execute();
-$all_reviews = $stmt_reviews->fetchAll();
+$locations =$result;
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +54,7 @@ $all_reviews = $stmt_reviews->fetchAll();
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Days</div>
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="18"> People</div>
             </div>
-            <form action="" method="post">
+            <form action="public/offers.php" method="get">
            
            <select class="search-field" name="from" id="" placeholder="Destination">
                     <option value="0">

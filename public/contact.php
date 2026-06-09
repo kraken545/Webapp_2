@@ -19,7 +19,9 @@
                 <a href="./contact.php">Contact</a>
             </nav>
            
-            <div class="nav-account"><a href="../private/login.php" class="nav-account-link">My Account</a></div>
+            <div>
+                
+            </div>
         </div>
     </header>
 
@@ -30,7 +32,7 @@
         </section>
 
         <div class="form-container">
-            <form method="POST" action="../dbcalls/user/review_create.php">
+            <form method="POST" action="../dbcalls/review/review_create.php">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" required>
@@ -55,20 +57,7 @@
             </form>
         </div>
 
-        <section class="info-grid info-grid-top-margin">
-            <div class="info-card">
-                <h3>Email</h3>
-                <p>info@voyage.nl</p>
-            </div>
-            <div class="info-card">
-                <h3>Phone</h3>
-                <p>+31 (0) 24 457 4676</p>
-            </div>
-            <div class="info-card">
-                <h3>Address</h3>
-                <p>Nijmegen, Netherlands</p>
-            </div>
-        </section>
+       
     </main>
 
       <footer>

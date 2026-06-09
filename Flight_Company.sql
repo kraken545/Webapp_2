@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Jun 08, 2026 at 01:03 PM
+-- Generation Time: Jun 09, 2026 at 10:59 AM
 -- Server version: 8.4.8
 -- PHP Version: 8.3.30
 
@@ -49,25 +49,6 @@ INSERT INTO `accommodations` (`accommodationid`, `name`, `type`, `peopleamount`,
 (7, 'Sydney Harbour Lodge', 'Lodge', 8, NULL),
 (8, 'Hotel Bella Roma', 'Hotel', 4, NULL),
 (24, 'Tropicana', 'Hostel', 2, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admins`
---
-
-CREATE TABLE `admins` (
-  `adminid` int NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `admins`
---
-
-INSERT INTO `admins` (`adminid`, `username`, `password`) VALUES
-(1, 'admin', '$2y$10$P7Y90UVGUtEfuPtgcOUQne2CPylMZBArkvhGaZ34nfa9Wtrdyo8/6');
 
 -- --------------------------------------------------------
 
@@ -225,6 +206,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userid`, `firstname`, `lastname`, `email`, `phone`, `password`, `role`) VALUES
+('user_6a27f1a1be426', 'admin', 'admin', 'admin@gmail.com', '', '$argon2id$v=19$m=65536,t=4,p=1$d0lHamc1ZnJ2YVRWTldNRw$r9RZsO1Ju6ZLwTulL2ZHn8USrUjdEk7g245PjHsLmsQ', 'admin'),
+('user_6a27f1d1f340f', 'test', 'test', 'test@gmail.com', '', '$argon2id$v=19$m=65536,t=4,p=1$Y1lTZVJxWGVWdFk5aUJWSw$IWRjh+fXxRsGjywyvK7MhGacOyTk8StFALskPUnT9Qs', 'user');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -233,12 +222,6 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `accommodations`
   ADD PRIMARY KEY (`accommodationid`);
-
---
--- Indexes for table `admins`
---
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`adminid`);
 
 --
 -- Indexes for table `flights`
@@ -292,12 +275,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `accommodations`
   MODIFY `accommodationid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT for table `admins`
---
-ALTER TABLE `admins`
-  MODIFY `adminid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `flights`

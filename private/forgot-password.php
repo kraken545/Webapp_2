@@ -34,7 +34,7 @@ session_start();
         <div class="form-container">
             
 
-            <form method="POST" action="../dbcalls/user/forgot_password_handler.php">
+            <form method="POST" action="../dbcalls/logs/forgot_password_handler.php">
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" required>

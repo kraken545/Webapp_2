@@ -2,6 +2,11 @@
 session_start();
 include("../dbcalls/conn.php");
 include("../dbcalls/user/users_read.php");
+$edit_info = "false";
+
+if (isset($_GET['edit_info'])) {
+    $edit_info = $_GET['edit_info'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +31,8 @@ include("../dbcalls/user/users_read.php");
                 <a href="../public/contact.php">Contact</a>
             </nav>
 
-            <div class="nav-account"><a href="../dbcalls/user/user_logout.php" class="nav-account-link">Log Out</a></div>
+            <div class="nav-account"><a href="../dbcalls/logs/logout.php" class="nav-account-link">Log out</a>
+            </div>
         </div>
     </header>
 
@@ -36,53 +42,62 @@ include("../dbcalls/user/users_read.php");
             <h1 class="page-title">Hi <?php echo ($_SESSION['user_firstname']); ?> </h1>
             <p class="page-subtitle">Manage your account information</p>
         </section>
+        
+        <form method="POST" action="../dbcalls/user/users_update.php" class="profile-container">
 
-        <div class="profile-container">
-          
+
             <div class="profile-card">
                 <h2 class="profile-card-title">Personal Information</h2>
-                
-                <div class="profile-info-grid">
-                    <div class="profile-info-item">
-                       <label class="profile-label">Full Name</label>
-                        <p class="profile-value"><?php echo ($_SESSION['user_firstname']); ?>  <?php echo ($_SESSION['user_lastname']); ?></p>
-                    </div>
 
-                    <div class="profile-info-item">
-                        <label class="profile-label">Email</label>
+
+                <div class="profile-info-item">
+                    <label class="profile-label"><?php if ($edit_info == "true") { ?>First Name<?php } else { ?>Full Name<?php } ?></label>
+                    <?php if ($edit_info == "true") { ?>
+                        <input type="text" name="firstname"
+                            value="<?php echo ($_SESSION['user_firstname']); ?>">
+                        <label for="lastname">Last Name</label> <input type="text" name="lastname"
+                            value="<?php echo ($_SESSION['user_lastname']); ?>">
+                    <?php } else { ?>
+                        <p class="profile-value"><?php echo ($_SESSION['user_firstname']); ?>
+                            <?php echo ($_SESSION['user_lastname']); ?></p>
+                    <?php } ?>
+                </div>
+
+                <div class="profile-info-item">
+                    <label class="profile-label">Email</label>
+                    <?php if ($edit_info == "true") { ?>
+                        <input type="text" name="email" value="<?php echo $_SESSION['user_email']; ?>">
+                    <?php } else { ?>
                         <p class="profile-value"><?php echo $_SESSION['user_email']; ?></p>
-                    </div>
-
-                    <div class="profile-info-item">
-                        <label class="profile-label">Phone</label>
-                        <p class="profile-value"><?php echo $_SESSION['user_phone']; ?></p>
-                    </div>
-
-                    <div class="profile-info-item">
-                        <label class="profile-label">Country</label>
-                        <p class="profile-value">Nederlands</p>
-                    </div>
-
+                    <?php } ?>
                 </div>
 
-               
-            </div>
+                <div class="profile-info-item">
+                    <label class="profile-label">Phone</label>
+                    <p class="profile-value"><?php echo $_SESSION['user_phone']; ?></p>
+                </div>
 
-         
-          
-
-            <!-- Opciones de Cuenta -->
-            <div class="profile-card">
-                <h2 class="profile-card-title">Account Settings</h2>
-                
-                <div class="profile-actions">
-                    <button type="submit" class="profile-action-btn">
-                        <span class="action-icon">✏️</span>
-                        <a href="../private/edit_profile.php?$edit_info=true" class="edit-profile-btn">Edit Profile</a>
+                <div class="profile-info-item">
+                    <label class="profile-label">Country</label>
+                    <p class="profile-value">Nederlands</p>
+                </div>
+                <?php if ($edit_info == "true") { ?>
+                    <button type="submit" class="action-button">
+                        Save Changes
                     </button>
-                </div>
+                </form>
+            <?php } else { ?>
+
+
+                <a class="action-button" href="profile.php?edit_info=true">✏️ Edit Profile</a>
+
+                    <?php } ?>
             </div>
-        </div>
+
+
+            </div>
+
+        </form>
     </main>
 
     <footer>
@@ -96,13 +111,13 @@ include("../dbcalls/user/users_read.php");
                         src="../assets/img/social_icon_dark/facebook (1).png" alt="Facebook" width="24" height="25"></a>
                 <a href="http://instagram.com/" target="_blank"><img src="../assets/img/social_icon_dark/instagram.png"
                         alt="Instagram" width="24" height="24"></a>
-                <a href="http://x.com/" target="_blank"><img src="../assets/img/social_icon_dark/twitter.png" alt="Twitter"
-                        width="24" height="23"></a>
+                <a href="http://x.com/" target="_blank"><img src="../assets/img/social_icon_dark/twitter.png"
+                        alt="Twitter" width="24" height="23"></a>
             </div>
         </div>
     </footer>
 
-   
+
 </body>
 
 </html>

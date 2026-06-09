@@ -7,4 +7,4 @@ $stmt = $conn->prepare($sql);
 
 $stmt->execute();
 
-$locations = $stmt->fetchAll();
+$result = $stmt->fetchAll();

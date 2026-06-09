@@ -84,7 +84,6 @@ main {
 
 main {
     width: 100%;
-    padding: 40px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -98,16 +97,24 @@ main {
     flex-direction: row;
     gap: 30px;
 
-    background-color: #f4f4f4;
+
 }
 
-.admin-hero {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 
+
+.admin-main-bg {
+    background-color: #0a2239;
+}
+
+
+.admin-hero-bg {
+    background-color: #0a2239;
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero {
@@ -133,6 +140,10 @@ main {
     ;
 }
 
+.darkblue {
+    background-color: #0a2239;
+}
+
 /* ========= search-panel ========= */
 
 .search-panel form {
@@ -155,7 +166,8 @@ main {
     font-weight: bold;
 
 }
-.side-admin-user-bookings{
+
+.side-admin-user-bookings {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -163,6 +175,7 @@ main {
 
 
 }
+
 .search-label {
     width: 885px;
     height: 25px;
@@ -179,6 +192,8 @@ main {
     gap: 10px;
     flex-direction: column;
     padding: 10px;
+    text-decoration: none;
+
 }
 
 
@@ -639,10 +654,31 @@ search-field:hover,
     border-radius: 10px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 16px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.admin-form-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+   padding: 15px;
+}
+
+.form-button.cancel {
+    background-color: #d60000;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.form-button.cancel:hover {
+    background: #d6000067;
+    box-shadow: 0 8px 20px rgba(241, 162, 8, 0.3);
 }
 
 .form-button:hover {
@@ -752,6 +788,8 @@ search-field:hover,
     font-size: 0.85rem;
     cursor: pointer;
     margin-right: 8px;
+    text-decoration: none;
+    font-weight: 800;
     transition: background 0.3s ease;
 }
 

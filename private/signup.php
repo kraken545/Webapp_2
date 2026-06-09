@@ -34,7 +34,7 @@ session_start();
         </section>
 
         <div class="form-container">
-            <form method="POST" action="../dbcalls/user/signup_handler.php">
+            <form method="POST" action="../dbcalls/logs/signup_handler.php">
                 <div class="form-group">
                     <label for="firstname">First Name</label>
                     <input type="text" id="firstname" name="firstname" required>

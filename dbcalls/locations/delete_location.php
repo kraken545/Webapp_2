@@ -2,7 +2,7 @@
 
     include('../conn.php');
 
-    $locationid = $_GET['locationid'];
+    $locationid = $_POST['delete_locationid'];
 
     $sql = "DELETE FROM locations WHERE locationid = :locationid";
     $stmt = $conn->prepare($sql);
@@ -10,3 +10,4 @@
     $stmt->execute();
 
     header('Location: ../../private/admin.php');
+    exit;
