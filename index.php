@@ -42,7 +42,7 @@ include("dbcalls/locations/read.php");
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Days</div>
                 <div><img src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="18"> People</div>
             </div>
-            <form action="" method="post">
+            <form action="./public/offers.php" method="get">
            
            <select class="search-field" name="from" id="" placeholder="Destination">
                     <option value="0">
