@@ -133,9 +133,9 @@ $accommodations = $result;
                 ?>
               </div>
               <div><?php echo $offer['type']; ?></div>
-              <form action="oders.php" method="get">
-                <input type="hidden" value="<?php echo $offer['tripid']; ?> ">
-                <a href="order.php" class="view-vacation-link">Bekijk Vakantie</a>
+              <form action="order.php" method="get">
+                <input type="hidden" name="id" value="<?php echo $offer['tripid']; ?>">
+                <button type="submit" class="view-vacation-link">Bekijk Vakantie</button>
               </form>
             </div>
           </div>
