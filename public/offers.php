@@ -133,7 +133,10 @@ $accommodations = $result;
                 ?>
               </div>
               <div><?php echo $offer['type']; ?></div>
-              <button type="button">Bekijk Vakantie</button>
+              <form action="oders.php" method="get">
+                <input type="hidden" value="<?php echo $offer['tripid']; ?> ">
+                <a href="order.php" class="view-vacation-link">Bekijk Vakantie</a>
+              </form>
             </div>
           </div>
         <?php } ?>
