@@ -65,19 +65,14 @@ $accommodations = $result;
             <?php } ?>
 
           </select>
-          <select class="offers-search-cards" name="accommodation-type" id="" placeholder="Accommodation Type">
+
+          <select class="offers-search-cards" name="accommodation-type" placeholder="Accommodation Type">
             <option value="" selected disabled hidden>Accommodation Type</option>
-            <?php
-            $seenTypes = [];
-            foreach ($accommodations as $accommodation) {
-              $type = $accommodation['type'];
-              if (in_array($type, $seenTypes)) {
-                continue;
-              }
-              $seenTypes[] = $type;
-            ?>
-              <option value="<?php echo htmlspecialchars($type, ENT_QUOTES); ?>"><?php echo $type; ?></option>
-            <?php } ?>
+            <?php foreach ($accommodations as $accommodation): ?>
+              <option value="<?php echo $accommodation['type']; ?>">
+                <?php echo $accommodation['type']; ?>
+              </option>
+            <?php endforeach; ?>
           </select>
 
           <button type="submit" class="offer-search-button">Search</button>
@@ -122,7 +117,10 @@ $accommodations = $result;
                 ?>
               </div>
               <div><?php echo $offer['type']; ?></div>
-              <button type="button">Bekijk Vakantie</button>
+              <form action="order.php" method="get">
+                <input type="hidden" name="id" value="<?php echo $offer['tripid']; ?>">
+                <button type="submit" class="view-vacation-link">Bekijk Vakantie</button>
+              </form>
             </div>
           </div>
         <?php } ?>

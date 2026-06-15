@@ -42,17 +42,28 @@ $locations =$result;
 
     <main>
         <section class="hero">
-            <p class="hero-title">Easy and affordable <span>travel</span></p>
-            <p class="hero-subtitle">The best travel agency in the Netherlands.</p>
+            <div>
+                <p class="hero-title">
+                    <span class="hero-title-main">Easy and affordable</span>
+                    <span class="hero-title-accent">travel</span>
+                </p>
+            </div>
+            <div>
+                <p class="hero-subtitle">The best travel agency in the Netherlands.</p>
+            </div>
         </section>
 
         <section class="search-panel">
             <div class="search-label">
-                <div>          </div>
-                <div><img src="assets/img/searchBar_icon/icons_darkGreen/location_green.png" alt="" width="15"> To</div>
-                <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Departure</div>
-                <div><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png" alt="" width="18"> Days</div>
-                <div><img src="assets/img/searchBar_icon/icons_darkGreen/people_green.png" alt="" width="18"> People</div>
+                <div> </div>
+                <div class="search-label-border"><img src="assets/img/searchBar_icon/icons_darkGreen/location_green.png"
+                        alt="" width="15"> To</div>
+                <div class="search-label-border"><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png"
+                        alt="" width="18"> Departure</div>
+                <div class="search-label-border"><img src="assets/img/searchBar_icon/icons_darkGreen/calendar_green.png"
+                        alt="" width="18"> Days</div>
+                <div class="search-label-border"><img src="assets/img/searchBar_icon/icons_darkGreen/people_green.png"
+                        alt="" width="18"> People</div>
             </div>
             <form action="public/offers.php" method="get">
            
@@ -67,17 +78,21 @@ $locations =$result;
                     <?php } ?>
                 </select>
 
-            <input type="date" class="search-field"  min="2026-06-01" max="2035-12-31" name="departure-date" id="departure-date" >
-            
-                
-            <input type="number" class="search-field" name="days" id="add-days" min="1" max="30" placeholder="Days">
-             
-               
-         <input type="number" class="search-field" name="people" id="total-people-input" min="1" max="10" value="1">
-              
+                <input type="date" class="search-field" min="2026-06-01" max="2035-12-31" name="departure-date"
+                    id="departure-date">
 
-            
-            <button type="submit" class="search-button"><img src="assets/img/searchBar_icon/icons_cyan/loop_cyan.png" alt="Search" width="20" height="20"> Search</button>
+
+                <input type="number" class="search-field" name="days" id="add-days" min="1" max="30" placeholder="Days">
+
+
+                <input type="number" class="search-field" name="people" id="total-people-input" min="1" max="10"
+                    value="1">
+
+
+
+                <button type="submit" class="search-button"><img
+                        src="assets/img/searchBar_icon/icons_cyan/loop_cyan.png" alt="Search" width="20" height="20">
+                    Search</button>
             </form>
 
         </section>
@@ -112,7 +127,7 @@ $locations =$result;
             <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg"
                     alt=""></div>
         </section>
-        
+
     </main>
 
     <footer>
@@ -132,5 +147,6 @@ $locations =$result;
         </div>
     </footer>
 </body>
-    <script src="./assets/js/app.js"></script>
+<script src="./assets/js/app.js"></script>
+
 </html>
