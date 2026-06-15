@@ -15,9 +15,7 @@
 }
 
 body {
-    background-image:
-        linear-gradient(to bottom, #f1a208 0%, transparent 18%),
-        url(../img/bg.png);
+    background-image: url(../img/bg.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -145,7 +143,7 @@ main {
 .hero-title-main {
     width: fit-content;
     color: #6e9c98;
-    background-color: #ddfff7;
+
     padding: 4px 16px;
     border-radius: 8px;
 }
@@ -153,14 +151,12 @@ main {
 .hero-title-accent {
     width: fit-content;
     color: #000000;
-    background-color: #ddfff7;
+
     padding: 4px 16px;
     border-radius: 8px;
 }
 
 .hero-subtitle {
-
-    background-color: #FFCAB1;
     width: fit-content;
     border-radius: 7px;
     color: #3f4a55;
@@ -224,8 +220,8 @@ main {
     padding: 10px;
     text-decoration: none;
 }
+
 .search-label-border {
-    background-color: #0a2239;
     border-radius: 8px;
     height: 25px;
     padding-left: 5px;
@@ -457,7 +453,7 @@ search-field:hover,
 }
 
 .reviews-carousel {
-    width: 100%;
+    width: 80%;
     display: flex;
     gap: 20px;
     scrollbar-color: transparent transparent;
@@ -698,14 +694,15 @@ search-field:hover,
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
+
 .admin-form-row {
     display: flex;
     gap: 16px;
     align-items: center;
     justify-content: center;
-   padding: 15px;
+    padding: 15px;
 }
 
 .form-button.cancel {

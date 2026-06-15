@@ -119,15 +119,7 @@ $locations =$result;
                 <button type="button" class="carousel-btn carousel-btn-right" onclick="scrollCarouselRight()">›</button>
         </section>
 
-        <section class="promo-row">
-            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg"
-                    alt=""></div>
-            <div class="promo-card">current offers <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="">
-            </div>
-            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg"
-                    alt=""></div>
-        </section>
-
+     
     </main>
 
     <footer>
