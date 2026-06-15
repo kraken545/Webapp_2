@@ -15,11 +15,16 @@
 }
 
 body {
+    background-image:
+        linear-gradient(to bottom, #f1a208 0%, transparent 18%),
+        url(../img/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: #ffffff;
     color: #1d1d1d;
 }
 
@@ -46,6 +51,8 @@ main {
     height: 40px;
 
 }
+
+
 
 .nav-bar nav,
 .footer-bar nav {
@@ -111,26 +118,47 @@ main {
 }
 
 .hero {
+    display: flex;
+    align-items: center;
     width: min(900px, 100%);
     text-align: center;
     padding: 20px 16px;
+    flex-direction: column;
 }
 
 .hero-title {
-
+    display: flex;
+    flex-direction: column;
     color: #111111;
     font-size: 75px;
     font-weight: 700;
+    align-items: center;
 }
 
-.hero-title span {
+.hero-title-main {
+    width: fit-content;
     color: #6e9c98;
+    background-color: #ddfff7;
+    padding: 4px 16px;
+    border-radius: 8px;
+}
+
+.hero-title-accent {
+    width: fit-content;
+    color: #000000;
+    background-color: #ddfff7;
+    padding: 4px 16px;
+    border-radius: 8px;
 }
 
 .hero-subtitle {
+
+    background-color: #FFCAB1;
+    width: fit-content;
+    border-radius: 7px;
     color: #3f4a55;
     font-weight: 500;
-    ;
+    margin-top: 12px;
 }
 
 /* ========= search-panel ========= */
@@ -164,21 +192,26 @@ main {
 
 }
 .search-label {
+    color: #ffffff;
     width: 885px;
     height: 25px;
     display: flex;
     flex-direction: row;
     gap: 95px;
+    align-items: center;
 
 
 
 }
 
-.action-buttons {
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    padding: 10px;
+.search-label-border {
+    background-color: #0a2239;
+    border-radius: 8px;
+    height: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    align-self: center;
 }
 
 
@@ -1103,18 +1136,19 @@ search-field:hover,
     padding: 10px;
 }
 
-.offer-prijs button {
+
+.view-vacation-link {
     background-color: #f1a208;
-    display: flex;
     color: #ffffff;
-    border: none;
+    text-decoration: none;
     width: 120px;
     height: 40px;
     border-radius: 10px;
     font-weight: 700;
+    display: flex;
     align-items: center;
     justify-content: center;
-
+    text-align: center;
 }
 
 .offers-card-section {
@@ -1263,4 +1297,35 @@ search-field:hover,
 .admin-form-group textarea {
     resize: vertical;
     min-height: 100px;
+}
+
+/* ---Order Section--- */
+.order-details-section {
+    height: auto;
+    width: min(900px, 100%);
+    padding: 20px;
+}
+
+.order-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.order-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f1a208;
+}
+
+.order-price-label {
+    color: #5d6b7b;
+    font-size: 0.9rem;
+}
+
+.order-form-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #f1a208;
+    padding-bottom: 12px;
 }
