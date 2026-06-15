@@ -8,6 +8,12 @@ if(isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] == true) 
     header('Location: admin.php');
     exit;
 }
+$error='';
+if(isset($_GET['error'])) {
+    $error = $_GET['error'];
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

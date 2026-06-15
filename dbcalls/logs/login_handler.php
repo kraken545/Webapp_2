@@ -27,9 +27,4 @@ if (isset($user) && password_verify($password_input, $user['password'])) {
         $_SESSION['admin_logged_in'] = true;
         header('Location: ../../private/admin.php');
     } 
-}
-
-
-
-
-
+} 
