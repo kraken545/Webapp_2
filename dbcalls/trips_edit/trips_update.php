@@ -38,3 +38,4 @@ $stmt_update->bindParam(':tripid', $tripid);
 
 $update_success = $stmt_update->execute();
 
+header('Location: ../../private/admin.php');

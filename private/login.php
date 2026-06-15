@@ -8,6 +8,12 @@ if(isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] == true) 
     header('Location: admin.php');
     exit;
 }
+$error='';
+if(isset($_GET['error'])) {
+    $error = $_GET['error'];
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +45,7 @@ if(isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] == true) 
         </section>
 
         <div class="form-container">
-            <form method="POST" action="../dbcalls/user/login_handler.php">
+            <form method="POST" action="../dbcalls/logs/login_handler.php">
                 <div class="form-group">
                     <label for="username">Email</label>
                     <input type="text" id="username" name="username" required>

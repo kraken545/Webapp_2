@@ -8,7 +8,7 @@ include("../dbcalls/accommodation/read_accommodation.php");
 include("../dbcalls/flights/read_flights.php");
 
 
-
+$locations = $result; 
 
 $edit_trip_data = null;
 
@@ -33,28 +33,22 @@ $edit_trip_data = null;
   </head>
   <body class="font">
     <header>
-      <div class="nav-bar">
+      <div class="nav-bar darkblue">
         <a href="../index.php" class="logo-link">
           <div class="logo">
             <img src="../assets/img/Logo.png" alt="Voyage" />
           </div>
         </a>
-        <nav>
-          <a href="../public/offers.php">Offers</a>
-          <a href="../public/about.php">About Us</a>
-
-        </nav>
+        
         <div class="nav-account">
-          <a href="../dbcalls/admin/admin_logout.php" class="nav-account-link admin-logout-btn">Log out</a>
+          <a href="../dbcalls/logs/logout.php" class="nav-account-link admin-logout-btn">Log out</a>
         </div>
       </div>
     </header>
+    
 
-    <main>
+    <main class="admin-main-bg">
       
-
-
-
       <section class="main-admin">
         <div id="tab-trips" class="admin-tab-content active">
           <section class="admin-section">
@@ -87,11 +81,11 @@ $edit_trip_data = null;
                        
                         <form method="POST" action="../dbcalls/trips_edit/trips_delete.php" onsubmit="return confirm('Are you sure you want to delete this trip?')" style="display:inline">
                           <input type="hidden" name="delete_tripid" value="<?php echo $trip['tripid']; ?>">
-                          <button type="submit" class="action-button delete">Delete</button>
+                          <button type="submit" class="action-button delete font">Delete</button>
                         </form>
 
                       
-                          <a href="admin.php?edit_tripid=<?php echo $trip['tripid']; ?>" class="action-button edit">Edit</a>
+                          <a href="admin.php?edit_tripid=<?php echo $trip['tripid']; ?>" class="action-button edit font">Edit</a>
                       </td>
                     </tr>
                   <?php } ?>
@@ -102,7 +96,7 @@ $edit_trip_data = null;
           <section class="side-admin-info-change">
             <div class="admin-section">
               <h3>Add New Location</h3>
-              <form method="POST" action="../dbcalls/locations/location_create.php" class="admin-form">
+              <form method="POST" action="../dbcalls/locations/create_location.php" class="admin-form">
                 <div class="admin-form-row">
                   <div class="admin-form-group">
                     <label for="city">City</label>
@@ -117,7 +111,7 @@ $edit_trip_data = null;
               </form>
             </div>
 
-            <div class="admin-section" style="margin-top: 30px;">
+            <div class="admin-section">
               <h3>Add New Accommodation</h3>
               <form method="POST" action="../dbcalls/accommodation/admin_accommodation_create.php" class="admin-form">
                 <div class="admin-form-group">
@@ -138,7 +132,7 @@ $edit_trip_data = null;
               </form>
             </div>
 
-            <div class="admin-section" style="margin-top: 30px;">
+            <div class="admin-section">
               <h3>Add New Flight</h3>
               <form method="POST" action="../dbcalls/flights/flight_create.php" class="admin-form">
                 <div class="admin-form-row">
@@ -225,7 +219,7 @@ $edit_trip_data = null;
                 <!-- Price: prijs per persoon -->
                 <div class="admin-form-group">
                   <label for="price">Price (€)</label>
-                  <input type="number" id="price" name="price" step="100" min="0" required placeholder="e.g. 899.50"
+                  <input type="number" id="price" name="price" step="1" min="0" required placeholder="e.g. 899.50"
                          value="<?php echo $edit_trip_data ? $edit_trip_data['price'] : ''; ?>">
                 </div>
               </div>
@@ -259,9 +253,14 @@ $edit_trip_data = null;
               </div>
 
               <!-- Submit knop -->
+               <div class="admin-form-row">
               <button type="submit" name="<?php echo $edit_trip_data ? 'update_trip' : 'create_trip'; ?>" class="form-button">
                 <?php echo $edit_trip_data ? 'Update' : 'Create'; ?>
               </button>
+              <?php if($edit_trip_data){ ?>
+              <button class="form-button cancel font" type="button"><a href="admin.php" >Cancel</a></button>
+              <?php } ?>
+              </div>
             </form>
           </section>
         </div>
@@ -397,26 +396,26 @@ $edit_trip_data = null;
                 <tr>
                   
                   <th>ID</th>
-                  <th>Departure</th>
-                  <th>Destination</th> 
+                  <th>City</th>
+                  <th>Country</th> 
                   <th>  </th>
                 </tr>
               </thead>
               <tbody>
                
-                  <?php foreach ($destinations as $destination){ ?>
+                  <?php foreach ($result as $destination){ ?>
                     <tr>
                       
-                      <td><?php echo ($destination['destinationid']); ?></td>
+                      <td><?php echo ($destination['locationid']); ?></td>
                       <td>
-                        <span class="status-badge"><?php echo ($destination['destination']); ?></span>
+                        <span class="status-badge"><?php echo ($destination['city']); ?></span>
                       </td>
                       <td>
-                        <span class="status-badge"><?php echo ($destination['destination']); ?></span>
+                        <span class="status-badge"><?php echo ($destination['country']); ?></span>
                       </td>
                       <td>
-                        <form method="POST" action="../dbcalls/destinations/destinations_delete.php" onsubmit="return confirm('Are you sure you want to delete this destination?')" style="display:inline">
-                          <input type="hidden" name="delete_destinationid" value="<?php echo $destination['destinationid']; ?>">
+                        <form method="POST" action="../dbcalls/locations/delete_location.php" onsubmit="return confirm('Are you sure you want to delete this destination?')" style="display:inline">
+                          <input type="hidden" name="delete_locationid" value="<?php echo $destination['locationid']; ?>">
                           <button type="submit" class="action-button delete">Delete</button>
                         </form>
                       </td>
@@ -433,21 +432,6 @@ $edit_trip_data = null;
       </section>
     </main>
 
-    <footer>
-        <div class="footer-bar">
-            <nav>
-                <a href="../public/contact.php">Contact</a>
-                <a href="../public/privacy.php">Privacy Policy</a>
-            </nav>
-            <div class="footer-socials">
-                <a href="https://www.facebook.com/" target="_blank"><img
-                        src="../assets/img/social_icon_dark/facebook (1).png" alt="Facebook" width="24" height="25"></a>
-                <a href="http://instagram.com/" target="_blank"><img src="../assets/img/social_icon_dark/instagram.png"
-                        alt="Instagram" width="24" height="24"></a>
-                <a href="http://x.com/" target="_blank"><img src="../assets/img/social_icon_dark/twitter.png" alt="Twitter"
-                        width="24" height="23"></a>
-            </div>
-        </div>
-    </footer>
+   
   </body>
 </html>

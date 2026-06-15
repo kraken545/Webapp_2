@@ -20,9 +20,8 @@
           <a href="./contact.php">Contact</a>
         </nav>
 
-        <div class="nav-account">
-          <a href="../private/login.php" class="nav-account-link">My Account</a>
-        </div>
+        <div>
+        
       </div>
     </header>
 
