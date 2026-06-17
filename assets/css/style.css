@@ -15,9 +15,7 @@
 }
 
 body {
-    background-image:
-        linear-gradient(to bottom, #f1a208 0%, transparent 18%),
-        url(../img/bg.png);
+    background-image: url(../img/bg.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -91,7 +89,6 @@ main {
 
 main {
     width: 100%;
-    padding: 40px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -105,16 +102,24 @@ main {
     flex-direction: row;
     gap: 30px;
 
-    background-color: #f4f4f4;
+
 }
 
-.admin-hero {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 
+
+.admin-main-bg {
+    background-color: #0a2239;
+}
+
+
+.admin-hero-bg {
+    background-color: #0a2239;
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero {
@@ -129,36 +134,27 @@ main {
 .hero-title {
     display: flex;
     flex-direction: column;
-    color: #111111;
+    color: #ffffff;
     font-size: 75px;
+    text-shadow: 2px 2px 15px #000000;
     font-weight: 700;
     align-items: center;
 }
 
-.hero-title-main {
-    width: fit-content;
-    color: #6e9c98;
-    background-color: #ddfff7;
-    padding: 4px 16px;
-    border-radius: 8px;
-}
 
-.hero-title-accent {
-    width: fit-content;
-    color: #000000;
-    background-color: #ddfff7;
-    padding: 4px 16px;
-    border-radius: 8px;
-}
 
 .hero-subtitle {
-
-    background-color: #FFCAB1;
     width: fit-content;
     border-radius: 7px;
-    color: #3f4a55;
+    color: #ffffff;
+    font-size: 25px;
     font-weight: 500;
     margin-top: 12px;
+    text-shadow: 2px 2px 15px #000000;
+}
+
+.darkblue {
+    background-color: #0a2239;
 }
 
 /* ========= search-panel ========= */
@@ -184,8 +180,18 @@ main {
 
 }
 
+.side-admin-user-bookings {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #111111;
+
+
+}
+
 .search-label {
     color: #ffffff;
+    text-shadow: 2px 2px 15px #000000;
     width: 885px;
     height: 25px;
     display: flex;
@@ -195,16 +201,19 @@ main {
 
 
 
+
+
 }
 
 .search-label-border {
-    background-color: #0a2239;
+    background-color: rgba(4, 13, 22, 80%);
     border-radius: 8px;
     height: 25px;
     padding-left: 5px;
     padding-right: 5px;
     text-align: center;
     align-self: center;
+    text-shadow: 2px 2px 15px #000000;
 }
 
 
@@ -430,7 +439,7 @@ search-field:hover,
 }
 
 .reviews-carousel {
-    width: 100%;
+    width: 80%;
     display: flex;
     gap: 20px;
     scrollbar-color: transparent transparent;
@@ -665,10 +674,32 @@ search-field:hover,
     border-radius: 10px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 16px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.admin-form-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.form-button.cancel {
+    background-color: #d60000;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.form-button.cancel:hover {
+    background: #d6000067;
+    box-shadow: 0 8px 20px rgba(241, 162, 8, 0.3);
 }
 
 .form-button:hover {
@@ -775,9 +806,13 @@ search-field:hover,
     border: none;
     padding: 6px 12px;
     border-radius: 6px;
+    margin: 10px;
     font-size: 0.85rem;
     cursor: pointer;
     margin-right: 8px;
+    text-decoration: none;
+    font-weight: 800;
+
     transition: background 0.3s ease;
 }
 
@@ -1232,9 +1267,65 @@ search-field:hover,
     height: 40px;
     padding: 10px;
     color: black;
+}
 
+/* Admin Form Styles */
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px 0;
+}
 
+.admin-form-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
 
+.admin-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.admin-form-group label {
+    font-weight: 600;
+    color: #111111;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.admin-form-group input,
+.admin-form-group select,
+.admin-form-group textarea {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    color: #111111;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.admin-form-group input:focus,
+.admin-form-group select:focus,
+.admin-form-group textarea:focus {
+    outline: none;
+    border-color: #6e9c98;
+    box-shadow: 0 0 0 3px hsla(175, 44%, 62%, 0.3);
+    background-color: #ffffff;
+}
+
+.admin-form-group textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 /* ---Order Section--- */
