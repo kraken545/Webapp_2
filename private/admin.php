@@ -6,14 +6,14 @@ include("../dbcalls/user/users_read.php");
 include("../dbcalls/locations/read.php");
 include("../dbcalls/accommodation/read_accommodation.php");
 include("../dbcalls/flights/read_flights.php");
-
+include("../dbcalls/bookings/bookings_read.php");
 
 $locations = $result; 
 
 $edit_trip_data = null;
 
 
-    if (isset($_GET['edit_tripid'])) {  
+if (isset($_GET['edit_tripid'])) {  
     $edit_tripid = $_GET['edit_tripid'];
     $sql_edit = "SELECT * FROM trips WHERE tripid = :tripid";
     $stmt_edit = $conn->prepare($sql_edit);
@@ -91,8 +91,56 @@ $edit_trip_data = null;
                   <?php } ?>
                
               </tbody>
-            </table>
+               
+              </table>
+
+
+             
+
           </section>
+          <div id="tab-bookings" class="admin-tab-content">
+              <section class="admin-section">
+              <h3>All Bookings</h3>
+              <table class="admin-table">
+              <thead>
+                <tr>
+                  
+                  <th>ID</th>
+                  <th>Customer</th>
+                  <th>From</th>
+                  <th>Number of People</th>
+                  <th>Total Price</th>
+                  <th>Booking Date</th>
+                </tr>
+              </thead>
+
+               <tbody>
+
+                  <?php foreach ($all_bookings as $booking) { ?>
+                    <tr>
+                      <td>#<?php echo $booking['orderid']; ?></td>
+                      <td>
+                        <?php echo ($booking['firstname'] . ' ' . $booking['lastname']); ?><br>
+                        <span class="status-badge"><?php echo $booking['email']; ?></span>
+                      </td>
+                      <td><?php echo ($booking['country']); ?></td>
+                      <td><?php echo $booking['quantity']; ?></td>
+                      <td>€<?php echo number_format($booking['Sum'], 2, ',', '.'); ?></td>
+                      <td><?php echo date('d M Y', strtotime($booking['orderdate'])); ?></td>
+                      
+                      <td class="action-buttons">
+                        <form method="POST" action="../dbcalls/bookings/booking_delete.php" onsubmit="return confirm('Are you sure you want to delete this booking?')" style="display:inline">
+                          <input type="hidden" name="delete_bookingid" value="<?php echo $booking['orderid']; ?>">
+                          <button type="submit" class="action-button delete font">Delete</button>
+                        </form>
+                      </td>
+                    </tr>
+                  <?php } ?>
+
+              </tbody>
+              </table>
+              </section>
+              </div>
           <section class="side-admin-info-change">
             <div class="admin-section">
               <h3>Add New Location</h3>

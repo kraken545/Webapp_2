@@ -5,6 +5,7 @@ session_start();
 $username_input = $_POST['username'];
 $password_input = $_POST['password'];
 
+$_SESSION['user_logged_in'] = false;
 
 
 $sql_user = "SELECT * FROM users WHERE email = :email";

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("../dbcalls/conn.php");
-include("../dbcalls/user/users_read.php");
+include("../dbcalls/bookings/user_bookings_read.php");
 $edit_info = "false";
 
 if (isset($_GET['edit_info'])) {
@@ -98,6 +98,37 @@ if (isset($_GET['edit_info'])) {
             </div>
 
         </form>
+
+         <div class="profile-container">
+            <div class="profile-card">
+                <h2 class="profile-card-title">My Bookings</h2>
+
+                
+
+                <?php if (empty($user_bookings)) { ?>
+                    <p class="profile-value">You don't have any bookings yet.</p>
+                    <a class="action-button" href="../public/offers.php">Browse Offers</a>
+                <?php } else { ?>
+                    <div class="offers-card-section">
+                        <?php foreach ($user_bookings as $booking) { ?>
+                            <div class="profile-info-item-bookings">
+                               
+                                <p class="profile-value"><?php echo ($booking['city'] . ' - ' . $booking['country']); ?></p> 
+                                 <p class="profile-value"> Amount og People: <?php echo $booking['quantity']?></p>
+                                <p class="profile-value">
+                                    <?php echo date('D d M Y', strtotime($booking['startdate'])); ?> ·
+                                    <?php echo $booking['duration']; ?> days
+                                </p>
+                                <p class="profile-value">Total: € <?php echo number_format($booking['Sum'], 0, ',', '.'); ?>-</p>
+                              
+
+        
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
     </main>
 
     <footer>
