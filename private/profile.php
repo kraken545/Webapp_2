@@ -114,7 +114,7 @@ if (isset($_GET['edit_info'])) {
                             <div class="profile-info-item-bookings">
                                
                                 <p class="profile-value"><?php echo ($booking['city'] . ' - ' . $booking['country']); ?></p> 
-                                 <p class="profile-value"> Amount og People: <?php echo $booking['quantity']?></p>
+                                 <p class="profile-value"> Amount of People: <?php echo $booking['quantity']?></p>
                                 <p class="profile-value">
                                     <?php echo date('D d M Y', strtotime($booking['startdate'])); ?> ·
                                     <?php echo $booking['duration']; ?> days
