@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Jun 15, 2026 at 01:35 PM
--- Server version: 8.4.8
--- PHP Version: 8.3.30
+-- Generation Time: Jun 18, 2026 at 11:13 AM
+-- Server version: 9.7.0
+-- PHP Version: 8.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -124,6 +124,19 @@ CREATE TABLE `orders` (
   `tripid` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`orderid`, `orderdate`, `Sum`, `quantity`, `userid`, `tripid`) VALUES
+(2, '2026-06-16 19:17:27', 1299.99, 1, 'user_6a27f1a1be426', 1),
+(3, '2026-06-16 19:20:06', 1299.99, 1, 'user_6a27f1a1be426', 1),
+(4, '2026-06-16 19:20:43', 3899.97, 3, 'user_6a27f1a1be426', 1),
+(5, '2026-06-16 19:24:25', 1299.99, 1, 'user_6a27f1a1be426', 1),
+(6, '2026-06-16 19:45:17', 1799, 2, 'user_6a27f1d1f340f', NULL),
+(7, '2026-06-16 19:46:18', 1799, 2, 'user_6a27f1d1f340f', 2),
+(9, '2026-06-18 11:10:08', 2599.98, 2, 'user_6a33d200169e8', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -179,7 +192,7 @@ CREATE TABLE `trips` (
 
 INSERT INTO `trips` (`tripid`, `maxpersons`, `price`, `startdate`, `duration`, `description`, `flightid`, `accommodationid`, `locationid`) VALUES
 (1, 4, 1299.99, '2026-07-10 08:00:00', 7, 'Zomervakantie in Amsterdam', NULL, 1, 1),
-(2, 2, 899.5, '2026-08-15 10:30:00', 5, 'Romantische stedentrip naar Parijs', 1, 2, 2),
+(2, 6, 900, '2026-08-15 10:30:00', 5, 'Romantische stedentrip naar Parijs', 1, 2, 2),
 (3, 10, 2150, '2026-09-01 06:45:00', 14, 'Avontuurlijke reis naar New York', 2, 3, 3),
 (4, 5, 3200.75, '2026-10-05 09:15:00', 21, 'Culturele reis door Tokyo', 3, 4, 4),
 (5, 6, 750, '2026-11-12 07:00:00', 10, 'Citytrip naar Barcelona', 4, 5, 5),
@@ -211,7 +224,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`userid`, `firstname`, `lastname`, `email`, `phone`, `password`, `role`) VALUES
 ('user_6a27f1a1be426', 'admin', 'admin', 'admin@gmail.com', '', '$argon2id$v=19$m=65536,t=4,p=1$d0lHamc1ZnJ2YVRWTldNRw$r9RZsO1Ju6ZLwTulL2ZHn8USrUjdEk7g245PjHsLmsQ', 'admin'),
-('user_6a27f1d1f340f', 'test', 'test', 'test@gmail.com', '', '$argon2id$v=19$m=65536,t=4,p=1$Y1lTZVJxWGVWdFk5aUJWSw$IWRjh+fXxRsGjywyvK7MhGacOyTk8StFALskPUnT9Qs', 'user');
+('user_6a27f1d1f340f', 'test', 'test', 'test@gmail.com', '', '$argon2id$v=19$m=65536,t=4,p=1$Y1lTZVJxWGVWdFk5aUJWSw$IWRjh+fXxRsGjywyvK7MhGacOyTk8StFALskPUnT9Qs', 'user'),
+('user_6a33d200169e8', 'kali', 'kali', 'kali@gmail.com', '8739826349', '$argon2id$v=19$m=65536,t=4,p=1$Nmc4eTN1bDFid3IuamUuZw$0aX0rkQR+wgOvk206RzyK2Vqbs/f1bqyGVGeVfalmao', 'user');
 
 --
 -- Indexes for dumped tables
@@ -292,7 +306,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderid` int NOT NULL AUTO_INCREMENT;
+  MODIFY `orderid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `reviews`

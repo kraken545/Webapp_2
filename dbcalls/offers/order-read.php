@@ -6,7 +6,7 @@ if (isset($_GET['id'])) {
 }
 
 $sql = "SELECT 
-    t.tripid, t.price, t.startdate, t.duration, t.description,
+    t.tripid, t.price, t.startdate, t.duration, t.description, t.maxpersons,
     a.name, a.type, a.image,
     f.departure,
     l.city, l.country

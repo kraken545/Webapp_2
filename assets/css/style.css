@@ -242,6 +242,10 @@ main {
     box-shadow: #969595 0px 4px 12px -2px;
 }
 
+.footer-bar{
+
+    margin-top: 30px;
+}
 .days-field {
     display: flex;
     flex-direction: column;
@@ -635,6 +639,16 @@ search-field:hover,
     padding: 40px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
+.form-container-booking{
+display: flex;
+flex-direction: row;
+width: 100%;
+gap: 10px;
+padding: 20px;
+
+
+}
+
 
 .form-group {
     margin-bottom: 24px;
@@ -1141,13 +1155,15 @@ search-field:hover,
 .offer-section {
     width: 900px;
     height: 230px;
-    background: #ffffff;
+    background: #00000094;
     display: flex;
     justify-content: space-around;
-    border: #888888 1px solid;
-
+    border-radius: 15px;
+    color: white;
+    margin: 10px;
 
 }
+
 
 .offer-section img {
     width: 200px;
@@ -1155,6 +1171,7 @@ search-field:hover,
     justify-self: center;
     display: flex;
     padding: 10px;
+    margin: 5px;
 
 }
 
@@ -1162,7 +1179,7 @@ search-field:hover,
     display: flex;
     flex-direction: column;
     gap: 12px;
-    border: #888888 1px solid;
+    
     padding: 10px;
 }
 
@@ -1170,7 +1187,7 @@ search-field:hover,
     display: flex;
     flex-direction: column;
     gap: 12px;
-    border: #888888 1px solid;
+
     padding: 10px;
 }
 
@@ -1192,8 +1209,20 @@ search-field:hover,
 .offers-card-section {
     display: flex;
     flex-direction: column;
+    width: 100%;
+
+}
+
+.profile-info-item-bookings{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: #00000034;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
     gap: 10px;
-    width: 70%;
 
 }
 
@@ -1356,7 +1385,7 @@ search-field:hover,
 }
 
 .order-price-label {
-    color: #5d6b7b;
+    color: white;
     font-size: 0.9rem;
 }
 
