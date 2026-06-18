@@ -553,14 +553,16 @@ search-field:hover,
 .page-title {
     font-size: 3rem;
     font-weight: 700;
-    color: #6e9c98;
+    color: #ffffff;
+    text-shadow: 2px 2px 15px #000000;
     padding: 10px;
     text-align: center;
 }
 
 .page-subtitle {
     font-size: 1.1rem;
-    color: #5d6b7b;
+    color: #ffffff;
+    text-shadow: 2px 2px 15px #000000;
     text-align: center;
     margin-bottom: 30px;
     line-height: 1.6;
