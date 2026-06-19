@@ -134,35 +134,23 @@ main {
 .hero-title {
     display: flex;
     flex-direction: column;
-    color: #111111;
+    color: #ffffff;
     font-size: 75px;
+    text-shadow: 2px 2px 15px #000000;
     font-weight: 700;
     align-items: center;
 }
 
-.hero-title-main {
-    width: fit-content;
-    color: #6e9c98;
-    background-color: #ddfff7;
-    padding: 4px 16px;
-    border-radius: 8px;
-}
 
-.hero-title-accent {
-    width: fit-content;
-    color: #000000;
-    background-color: #ddfff7;
-    padding: 4px 16px;
-    border-radius: 8px;
-}
 
 .hero-subtitle {
     width: fit-content;
     border-radius: 7px;
-    color: #3f4a55;
+    color: #ffffff;
+    font-size: 25px;
     font-weight: 500;
     margin-top: 12px;
-    background-color: #FFCAB1;
+    text-shadow: 2px 2px 15px #000000;
 }
 
 .darkblue {
@@ -203,6 +191,7 @@ main {
 
 .search-label {
     color: #ffffff;
+    text-shadow: 2px 2px 15px #000000;
     width: 885px;
     height: 25px;
     display: flex;
@@ -213,16 +202,18 @@ main {
 
 
 
+
 }
 
 .search-label-border {
+    background-color: rgba(4, 13, 22, 80%);
     border-radius: 8px;
     height: 25px;
     padding-left: 5px;
     padding-right: 5px;
     text-align: center;
     align-self: center;
-    background-color: #0a2239;
+    text-shadow: 2px 2px 15px #000000;
 }
 
 
@@ -527,6 +518,7 @@ search-field:hover,
 }
 
 .promo-card {
+    text-decoration: none;
     min-height: 210px;
     border-radius: 25px;
     background: #ddfff7;
@@ -562,14 +554,16 @@ search-field:hover,
 .page-title {
     font-size: 3rem;
     font-weight: 700;
-    color: #6e9c98;
+    color: #ffffff;
+    text-shadow: 2px 2px 15px #000000;
     padding: 10px;
     text-align: center;
 }
 
 .page-subtitle {
     font-size: 1.1rem;
-    color: #5d6b7b;
+    color: #ffffff;
+    text-shadow: 2px 2px 15px #000000;
     text-align: center;
     margin-bottom: 30px;
     line-height: 1.6;
