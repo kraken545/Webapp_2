@@ -518,6 +518,7 @@ search-field:hover,
 }
 
 .promo-card {
+    text-decoration: none;
     min-height: 210px;
     border-radius: 25px;
     background: #ddfff7;

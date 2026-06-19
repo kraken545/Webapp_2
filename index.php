@@ -161,12 +161,13 @@ include("dbcalls/locations/read.php");
         </section>
 
         <section class="promo-row">
-            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg"
-                    alt=""></div>
-            <div class="promo-card">current offers <img src="assets/img/test_img/infinity-pool-with-views.jpg" alt="">
-            </div>
-            <div class="promo-card">popular destinations <img src="assets/img/test_img/infinity-pool-with-views.jpg"
-                    alt=""></div>
+            <a href="./public/offers.php" class="promo-card">popular destinations <img
+                    src="assets/img/test_img/infinity-pool-with-views.jpg" alt=""></a>
+            <a href="./public/offers.php" class="promo-card">current offers <img
+                    src="assets/img/test_img/infinity-pool-with-views.jpg" alt="">
+            </a>
+            <a href="./public/offers.php" class=" promo-card">popular destinations <img
+                    src="assets/img/test_img/infinity-pool-with-views.jpg" alt=""></a>
         </section>
 
     </main>
