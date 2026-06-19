@@ -17,16 +17,7 @@ if ($stmt_check->rowCount() > 0) {
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':password', $hashed_password);
     $stmt->bindParam(':email', $email);
-    $change_success = $stmt->execute();
+    $stmt->execute();
 
-    if ($change_success) {
-        header('Location: ../../private/login.php?password=changed');
-        exit;
-    } else {
-        header('Location: ../../private/forgot-password.php?error=update_failed');
-        exit;
-    }
-} else {
-    header('Location: ../../private/forgot-password.php?error=email_not_found');
-    exit;
 }
+ header('Location: ../../private/login.php');
